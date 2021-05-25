@@ -1,0 +1,7 @@
+.phone-nav-container {
+	min-height: 10vh;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: var(--primary);
+}
