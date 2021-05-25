@@ -101,9 +101,16 @@
 	.header-container {
 		height: 10vh;
 	}
+	.search-bar {
+		width: 35vw;
+	}
 }
 
 @media screen and (max-width: 480px) {
+	.header-container {
+		padding: 1rem;
+		border-bottom: 0.05rem solid var(--back-secondary);
+	}
 	.search-bar {
 		width: 45vw;
 		padding: 0.65rem 1rem;
