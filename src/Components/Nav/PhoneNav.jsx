@@ -1,11 +1,8 @@
 import "./phoneNav.css";
 import { NavLink } from "react-router-dom";
 import { FaCompass, FaHeart } from "react-icons/fa";
-import { BsFillCollectionPlayFill, BsFillDisplayFill } from "react-icons/bs";
-import { MdPhoto } from "react-icons/md";
-import { FaBook, FaRegLaughSquint } from "react-icons/fa";
+import { BsFillCollectionPlayFill } from "react-icons/bs";
 import { RiHistoryLine } from "react-icons/ri";
-import { SiAdobelightroomcc, SiAdobephotoshop } from "react-icons/si";
 
 export const PhoneNav = () => {
 	return (
