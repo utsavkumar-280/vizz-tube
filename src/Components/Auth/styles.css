@@ -1,0 +1,5 @@
+.login-container {
+	min-height: 90vh;
+	background-color: rgb(255, 84, 246);
+	grid-area: main-app-area;
+}
