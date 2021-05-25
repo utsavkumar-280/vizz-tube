@@ -4,6 +4,7 @@ export { Footer } from "./Footer";
 
 export { ErrorPage } from "./ErrorPage";
 export { VideoDetails } from "./VideoDetails";
+export { Nav, PhoneNav } from "./Nav";
 
 export { Login, Signup, ForgotPassword, PrivateRoute } from "./Auth";
 

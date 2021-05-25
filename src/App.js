@@ -14,26 +14,32 @@ import {
 	Signup,
 	ForgotPassword,
 	NotRelated,
+	Nav,
+	PhoneNav,
 } from "./Components";
 
 function App() {
 	return (
-		<div className="app-container">
-			<div className="app-main">
-				<Header />
-				<Routes>
-					<Route to="/" element={<Home />} />
-					<Route to="/explore" element={<Explore />} />
-					<Route to="/login" element={<Login />} />
-					<Route to="/signup" element={<Signup />} />
-					<Route to="/forgot-pass" element={<ForgotPassword />} />
-					<PrivateRoute to="/liked" element={<Liked />} />
-					<PrivateRoute to="/playlist" element={<Playlist />} />
-					<PrivateRoute to="/history" element={<History />} />
-					<Route to="/not-related" element={<NotRelated />} />
-				</Routes>
+		<div className="App">
+			<div className="app-container">
+				<div className="app-main">
+					<Header />
+					<Nav />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/explore" element={<Explore />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/signup" element={<Signup />} />
+						<Route path="/forgot-pass" element={<ForgotPassword />} />
+						<PrivateRoute path="/liked" element={<Liked />} />
+						<PrivateRoute path="/playlist" element={<Playlist />} />
+						<PrivateRoute path="/history" element={<History />} />
+						<Route path="/not-related" element={<NotRelated />} />
+					</Routes>
+					<Footer />
+				</div>
+				<PhoneNav />
 			</div>
-			<Footer />
 		</div>
 	);
 }
