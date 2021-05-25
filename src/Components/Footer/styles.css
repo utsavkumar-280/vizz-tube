@@ -10,7 +10,7 @@
 	font-family: "Poppins", sans-serif;
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	grid-area: footer-area;
 }
@@ -20,7 +20,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0rem 0rem 2.5rem 0rem;
+	padding: 2.5rem 0rem;
 }
 .footer-logo {
 	font-size: 3.25rem;
@@ -74,13 +74,22 @@
 	}
 }
 
+@media screen and (max-width: 740px) {
+	.footer-container {
+		min-height: 25vh;
+	}
+}
+
 @media screen and (max-width: 480px) {
+	.footer-container {
+		min-height: 40vh;
+	}
 	.footer-main {
 		width: 95%;
-		padding: 2rem 0rem;
+		padding: 1.5rem 0rem;
 		display: flex;
 		flex-direction: column-reverse;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: center;
 	}
 	.connectMe {
