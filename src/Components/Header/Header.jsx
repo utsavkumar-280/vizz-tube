@@ -2,6 +2,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 // import { RiYoutubeFill } from "react-icons/ri";
 import { FaUserCircle, FaYoutube } from "react-icons/fa";
+import { BiSearch } from "react-icons/bi";
 
 export const Header = () => {
 	return (
@@ -18,9 +19,13 @@ export const Header = () => {
 						<input
 							type="search"
 							name="search-bar"
-							id="search-bar"
-							placeholder="search"
+							id="search-bar-main"
+							placeholder="Search"
+							className="search-bar"
 						/>
+						<button className="search-icon-container">
+							<BiSearch className="search-icon" />
+						</button>
 					</div>
 				</div>
 				<div className="head-right ">

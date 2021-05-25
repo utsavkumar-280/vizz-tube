@@ -30,7 +30,7 @@
 .head-main-logo {
 	color: var(--head-primary);
 	text-decoration: none;
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 	font-weight: 600;
 	font-style: italic;
 	letter-spacing: 0.1rem;
@@ -47,7 +47,7 @@
 	text-decoration: none;
 	color: var(--head-primary);
 	font-size: 1.5rem;
-	font-weight: 400;
+	font-weight: 300;
 	letter-spacing: 0.1rem;
 	margin: 0rem 0.75rem;
 }
@@ -57,6 +57,39 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.search-container {
+	display: flex;
+	align-items: center;
+	background-color: var(--back-secondary);
+	border-radius: 1rem;
+}
+.search-bar {
+	min-width: 30vw;
+	font-family: "Poppins", sans-serif;
+	letter-spacing: 0.05rem;
+	background-color: var(--back-secondary);
+	color: var(--head-primary);
+	font-size: 1.25rem;
+	border-radius: 1rem 0rem 0rem 1rem;
+	padding: 1rem 1.75rem;
+}
+
+.search-icon-container {
+	border-radius: 0rem 1rem 1rem 0rem;
+	background-color: var(--back-secondary);
+	padding: 1rem 1.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.search-icon {
+	font-size: 1.75rem;
+	background-color: var(--back-secondary);
+	color: var(--head-secondary);
+}
+
 .head-login {
 	margin: 0rem 0.75rem;
 }
@@ -64,9 +97,19 @@
 	font-size: 2.5rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 740px) {
 	.header-container {
 		height: 10vh;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.search-bar {
+		width: 45vw;
+		padding: 0.65rem 1rem;
+	}
+	.search-icon-container {
+		padding: 0.65rem 1rem;
 	}
 	.head-vizztube {
 		display: none;
