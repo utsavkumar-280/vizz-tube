@@ -1,5 +1,6 @@
 .home-container {
-	background-color: aquamarine;
-	min-height: 100vh;
+	background-color: var(--back-primary);
+	color: var(--head-secondary);
+	min-height: 92.5vh;
 	grid-area: main-app-area;
 }

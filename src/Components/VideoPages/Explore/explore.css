@@ -1,5 +1,5 @@
 .explore-container {
-	background-color: rgb(51, 153, 90);
-	height: 100vh;
+	background-color: var(--back-primary);
+	min-height: 92.5vh;
 	grid-area: main-app-area;
 }

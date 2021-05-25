@@ -1,0 +1,4 @@
+.liked-container {
+	background-color: var(--back-primary);
+	min-height: 92.5vh;
+}
