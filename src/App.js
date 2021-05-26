@@ -25,17 +25,20 @@ function App() {
 				<div className="app-main">
 					<Header />
 					<Nav />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/explore" element={<Explore />} />
-						<Route path="/login" element={<Login />} />
-						<Route path="/signup" element={<Signup />} />
-						<Route path="/forgot-pass" element={<ForgotPassword />} />
-						<PrivateRoute path="/liked" element={<Liked />} />
-						<PrivateRoute path="/playlist" element={<Playlist />} />
-						<PrivateRoute path="/history" element={<History />} />
-						<Route path="/not-related" element={<NotRelated />} />
-					</Routes>
+					<div className="main-routes">
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/explore" element={<Explore />} />
+							<Route path="/login" element={<Login />} />
+							<Route path="/signup" element={<Signup />} />
+							<Route path="/forgot-pass" element={<ForgotPassword />} />
+							<PrivateRoute path="/liked" element={<Liked />} />
+							<PrivateRoute path="/playlist" element={<Playlist />} />
+							<PrivateRoute path="/history" element={<History />} />
+							<Route path="/not-related" element={<NotRelated />} />
+						</Routes>
+					</div>
+
 					<Footer />
 				</div>
 				<PhoneNav />

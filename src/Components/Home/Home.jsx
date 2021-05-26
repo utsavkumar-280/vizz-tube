@@ -10,7 +10,9 @@ export const Home = () => {
 					<div className="discover-main">
 						<div className="discover-photo">
 							<p>
-								The What, Why and How
+								Learn about the
+								<br />
+								What, Why and How
 								<br />
 								of Photography
 								<br />

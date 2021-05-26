@@ -2,11 +2,10 @@
 	background-color: var(--back-primary);
 	color: var(--head-secondary);
 	min-height: 92.5vh;
-	grid-area: main-app-area;
 	font-family: "Poppins", sans-serif;
 }
 .home-main {
-	height: 100%;
+	min-height: 92.5vh;
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: 1.25fr 1fr;
@@ -30,7 +29,7 @@
 }
 .discover-photo {
 	margin: 0rem 1rem 2rem 1rem;
-	background: url("./assets/blue.jpg");
+	background: linear-gradient(#00000030, transparent), url("./assets/blue.jpg");
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -46,7 +45,8 @@
 }
 .discover-edit {
 	margin: 0rem 1rem 2rem 1rem;
-	background: url("./assets/orange.jpg");
+	background: linear-gradient(#00000030, transparent),
+		url("./assets/orange.jpg");
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -55,7 +55,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	font-size: 2.5rem;
+	font-size: 2.75rem;
 	font-weight: 500;
 	color: var(--head-primary);
 }
@@ -105,5 +105,12 @@
 	}
 	.discover-main p {
 		margin: 3.5rem 1rem;
+	}
+	.discover-photo {
+		background: linear-gradient(#00000050, transparent),
+			url("./assets/blue.jpg");
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 }

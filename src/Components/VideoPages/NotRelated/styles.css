@@ -1,4 +1,29 @@
 .not-related-container {
 	background-color: var(--back-primary);
 	min-height: 92.5vh;
+	grid-area: main-app-area;
+}
+
+.not-related-main {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 2rem 0.75rem 1rem 0.75rem;
+}
+
+.main-video {
+	display: block;
+	height: 72.5vh;
+	width: 100%;
+	border-radius: 3rem;
+}
+
+@media screen and (max-width: 740px) {
+	.not-related-main {
+		padding: 3rem 0rem 1rem 0rem;
+	}
+	.main-video {
+		height: 50vh;
+		border-radius: 0rem;
+	}
 }

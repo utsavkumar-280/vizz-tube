@@ -19,7 +19,7 @@ html {
 }
 
 .app-container {
-	min-height: 92.5vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,10 +34,14 @@ html {
 		"nav-area main-app-area"
 		"nav-area footer-area";
 }
+.main-routes {
+	min-height: 92.5vh;
+	grid-area: main-app-area;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: 2rem;
+	width: 1.85rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -71,5 +75,6 @@ html {
 			" header-area header-area"
 			"main-app-area main-app-area"
 			"footer-area footer-area";
+		width: 100%;
 	}
 }
