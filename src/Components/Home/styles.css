@@ -34,7 +34,7 @@
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 2.5rem;
+	border-radius: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -50,7 +50,7 @@
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 2.5rem;
+	border-radius: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -62,6 +62,23 @@
 .discover-main p {
 	margin: 5rem 2rem;
 }
+.discover-main a {
+	text-decoration: none;
+	margin: 2rem;
+}
+.discover-button {
+	display: block;
+	padding: 1rem 1.5rem;
+	background-color: transparent;
+	color: var(--head-primary);
+	border: 0.1rem solid var(--head-primary);
+	border-radius: 1.25rem;
+	font-size: 1.75rem;
+	font-weight: 500;
+	font-family: "Poppins", sans-serif;
+	cursor: pointer;
+}
+
 .popular-container {
 	background-color: var(--back-primary);
 }
@@ -70,4 +87,23 @@
 	font-weight: 500;
 	padding: 0.5rem 1rem;
 	color: var(--head-primary);
+}
+
+@media screen and (max-width: 940px) {
+	.discover-main {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1.25fr;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.discover-main {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1.25fr;
+	}
+	.discover-main p {
+		margin: 3.5rem 1rem;
+	}
 }

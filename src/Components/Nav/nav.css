@@ -76,3 +76,25 @@
 		display: none;
 	}
 }
+
+@media screen and (max-height: 840px) {
+	.nav-container {
+		overflow-y: scroll;
+		/* Scrollbar */
+	}
+	.nav-container::-webkit-scrollbar {
+		width: 1.75rem;
+	}
+
+	.nav-container::-webkit-scrollbar-track {
+		background-color: var(--back-primary);
+	}
+	.nav-container::-webkit-scrollbar-thumb {
+		background: var(--back-secondary);
+		border-radius: 1rem;
+	}
+
+	.nav-container::-webkit-scrollbar-thumb:hover {
+		background: var(--head-secondary);
+	}
+}
