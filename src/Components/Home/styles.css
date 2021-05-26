@@ -3,4 +3,71 @@
 	color: var(--head-secondary);
 	min-height: 92.5vh;
 	grid-area: main-app-area;
+	font-family: "Poppins", sans-serif;
+}
+.home-main {
+	height: 100%;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 1.25fr 1fr;
+}
+.discover-container {
+	background-color: var(--back-primary);
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 15% 85%;
+}
+.discover-head {
+	font-size: 4rem;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	color: var(--head-primary);
+}
+.discover-main {
+	display: grid;
+	grid-template-columns: 2fr 1.5fr;
+	grid-template-rows: auto;
+}
+.discover-photo {
+	margin: 0rem 1rem 2rem 1rem;
+	background: url("./assets/blue.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-size: 2.75rem;
+	font-weight: 500;
+	letter-spacing: 0.025rem;
+	color: var(--head-primary);
+}
+.discover-edit {
+	margin: 0rem 1rem 2rem 1rem;
+	background: url("./assets/orange.jpg");
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: var(--head-primary);
+}
+.discover-main p {
+	margin: 5rem 2rem;
+}
+.popular-container {
+	background-color: var(--back-primary);
+}
+.popular-head {
+	font-size: 3rem;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	color: var(--head-primary);
 }
