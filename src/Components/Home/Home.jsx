@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	return (
@@ -14,6 +15,9 @@ export const Home = () => {
 								of Photography
 								<br />
 							</p>
+							<Link to="/explore">
+								<button className="discover-button">Watch Now</button>
+							</Link>
 						</div>
 						<div className="discover-edit">
 							<p>
@@ -23,6 +27,9 @@ export const Home = () => {
 								<br />
 								right now
 							</p>
+							<Link to="/explore">
+								<button className="discover-button">Watch Now</button>
+							</Link>
 						</div>
 					</div>
 				</div>

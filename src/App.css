@@ -35,27 +35,31 @@ html {
 		"nav-area footer-area";
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 2rem;
+}
+
+::-webkit-scrollbar-track {
+	border: 0.5rem solid var(--back-primary);
+	background-color: var(--back-primary);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--back-secondary);
+	border: 0.5rem solid var(--back-primary);
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--head-secondary);
+}
+
 @media screen and (max-width: 1380px) {
 	.app-main {
 		grid-template-columns: 1fr 6fr;
 	}
 }
 @media screen and (max-width: 1240px) {
-	.app-main {
-		grid-template-columns: 1fr 5.5fr;
-	}
-}
-@media screen and (max-width: 1024px) {
-	.app-main {
-		grid-template-columns: 1fr 5fr;
-	}
-}
-@media screen and (max-width: 940px) {
-	.app-main {
-		grid-template-columns: 1fr 4.5fr;
-	}
-}
-@media screen and (max-width: 880px) {
 	.app-main {
 		grid-template-columns: 1fr 4fr;
 	}
