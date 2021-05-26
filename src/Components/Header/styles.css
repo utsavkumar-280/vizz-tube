@@ -103,6 +103,7 @@
 @media screen and (max-width: 740px) {
 	.header-container {
 		height: 10vh;
+		border-bottom: 0.05rem solid var(--back-secondary);
 	}
 	.search-bar {
 		width: 35vw;
@@ -116,7 +117,6 @@
 @media screen and (max-width: 480px) {
 	.header-container {
 		padding: 1rem;
-		border-bottom: 0.05rem solid var(--back-secondary);
 	}
 	.search-bar {
 		width: 45vw;
