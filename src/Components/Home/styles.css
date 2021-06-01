@@ -95,6 +95,9 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1.25fr;
 	}
+	.discover-container {
+		grid-template-rows: 10% 90%;
+	}
 }
 
 @media screen and (max-width: 540px) {
