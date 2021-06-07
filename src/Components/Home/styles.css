@@ -6,15 +6,15 @@
 }
 .home-main {
 	min-height: 92.5vh;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 1.25fr 1fr;
+	display: flex;
+	flex-direction: column;
 }
 .discover-container {
 	background-color: var(--back-primary);
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: 15% 85%;
+	flex-grow: 1.25;
 }
 .discover-head {
 	font-size: 4rem;
@@ -81,6 +81,7 @@
 
 .popular-container {
 	background-color: var(--back-primary);
+	flex-grow: 1.25;
 }
 .popular-main {
 	display: grid;
