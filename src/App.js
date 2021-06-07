@@ -16,13 +16,13 @@ import {
 	Login,
 	Signup,
 	ForgotPassword,
-	NotRelated,
 	Nav,
 	PhoneNav,
+	VideoDetails,
 } from "./Components";
 
 function App() {
-	const { state, dispatch } = useAppDataContext();
+	const { dispatch } = useAppDataContext();
 
 	useEffect(() => {
 		(async () => {
@@ -37,7 +37,7 @@ function App() {
 			}
 		})();
 	}, [dispatch]);
-	console.log(state);
+	// console.log(state);
 	return (
 		<div className="App">
 			<div className="app-container">
@@ -48,13 +48,13 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/explore" element={<Explore />} />
+							<Route path="/explore/:vidId" element={<VideoDetails />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/forgot-pass" element={<ForgotPassword />} />
 							<PrivateRoute path="/liked" element={<Liked />} />
 							<PrivateRoute path="/playlist" element={<Playlist />} />
 							<PrivateRoute path="/history" element={<History />} />
-							<Route path="/not-related" element={<NotRelated />} />
 						</Routes>
 					</div>
 

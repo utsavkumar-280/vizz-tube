@@ -8,4 +8,4 @@ export { Nav, PhoneNav } from "./Nav";
 
 export { Login, Signup, ForgotPassword, PrivateRoute } from "./Auth";
 
-export { Explore, History, Liked, Playlist, NotRelated } from "./VideoPages";
+export { Explore, History, Liked, Playlist } from "./VideoPages";
