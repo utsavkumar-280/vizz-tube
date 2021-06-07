@@ -1,0 +1,73 @@
+.card-container {
+	max-height: 35vh;
+	width: 15vw;
+	/* height: 100%;
+	width: 100%; */
+	background-color: var(--back-card);
+	justify-self: center;
+	border-radius: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+.card-thumbnail-container {
+	flex-grow: 1;
+}
+.card-thumbnail {
+	display: block;
+	width: 15vw;
+	height: auto;
+	border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.card-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	/* padding: 2rem 1.5rem 1.5rem 1.5rem; */
+	padding: 0.75rem 1.5rem;
+	flex-grow: 1.5;
+	min-height: 17.5vh;
+}
+
+.card-cat {
+	color: var(--primary);
+	font-size: 1.25rem;
+	margin: 1rem 0rem;
+}
+.card-title {
+	text-decoration: none;
+}
+
+.card-title > h2 {
+	font-size: 1.65rem;
+	letter-spacing: 0.05rem;
+	font-weight: 400;
+	color: var(--head-primary);
+	text-decoration: none;
+	transition: all 0.25s ease;
+}
+
+.card-title:hover > h2 {
+	color: var(--primary);
+	transition: all 0.25s ease;
+}
+.card-author {
+	color: var(--head-secondary);
+	letter-spacing: 0.1rem;
+	font-size: 1.25rem;
+	margin: 1rem 0rem;
+	text-transform: uppercase;
+}
+
+.card-avatar {
+	position: absolute;
+	top: 40%;
+	right: 1.5rem;
+	height: 5.75vh;
+	border-radius: 50%;
+	padding: 0.5rem;
+	border: 0.1rem solid var(--head-primary);
+}
