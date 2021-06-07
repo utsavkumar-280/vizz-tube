@@ -1,5 +1,53 @@
 .explore-container {
 	background-color: var(--back-primary);
-	min-height: 92.5vh;
+	/* min-height: 92.5vh; */
+	font-family: "Poppins", sans-serif;
 	grid-area: main-app-area;
+}
+.explore-main {
+	/* min-height: 92.5vh; */
+	margin: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+}
+.category-toggle {
+	margin: 0.5rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+
+.category-cta {
+	display: block;
+	margin: 0.5rem;
+	padding: 0.5rem 2rem;
+	font-size: 1.625rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+	border: 0.1rem solid var(--back-secondary);
+	border-radius: 2rem;
+	text-decoration: none;
+	color: var(--head-secondary);
+	transition: all 0.25s ease;
+}
+.category-cta:hover {
+	color: var(--head-primary);
+	background-color: var(--primary);
+	transition: all 0.25s ease;
+}
+.category-cta-active {
+	color: var(--head-primary);
+	background-color: var(--primary);
+	transition: all 0.25s ease;
+}
+
+.video-card-container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 2.5vh 0rem;
+	flex-grow: 10;
+	padding: 2rem;
 }
