@@ -4,7 +4,7 @@ import "./videoCard.css";
 export const VideoCard = ({ video }) => {
 	return (
 		<div className="card-container">
-			<Link to="/login" className="card-thumbnail-container">
+			<Link to={`/explore/${video._id}`} className="card-thumbnail-container">
 				<img
 					src={video.thumbnail}
 					alt="thumbnail-img"
@@ -14,7 +14,7 @@ export const VideoCard = ({ video }) => {
 
 			<article className="card-info">
 				<p className="card-cat">#{video.category} </p>
-				<Link to="/login" className="card-title">
+				<Link to={`/explore/${video._id}`} className="card-title">
 					<h2>{video.title}</h2>
 				</Link>
 				<h3 className="card-author">{video.author}</h3>
