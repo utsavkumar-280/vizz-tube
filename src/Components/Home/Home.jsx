@@ -1,7 +1,10 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { VideoCard } from "../VideoCard";
+import { useAppDataContext } from "../../Context";
 
 export const Home = () => {
+	const { state } = useAppDataContext();
 	return (
 		<div className="home-container">
 			<div className="home-main">
@@ -38,10 +41,11 @@ export const Home = () => {
 				<div className="popular-container">
 					<div className="popular-head">Popular</div>
 					<div className="popular-main">
-						<div className="popular"></div>
-						<div className="popular"></div>
-						<div className="popular"></div>
-						<div className="popular"></div>
+						{state.videos
+							.filter((video) => video.category === "Popular")
+							.map((video) => {
+								return <VideoCard video={video} key={video._id} />;
+							})}
 					</div>
 				</div>
 			</div>

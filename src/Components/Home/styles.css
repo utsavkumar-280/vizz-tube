@@ -19,7 +19,7 @@
 .discover-head {
 	font-size: 4rem;
 	font-weight: 500;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 2rem;
 	color: var(--head-primary);
 }
 .discover-main {
@@ -28,7 +28,7 @@
 	grid-template-rows: auto;
 }
 .discover-photo {
-	margin: 0rem 1rem 2rem 1rem;
+	margin: 0rem 1rem 1.5rem 1rem;
 	background: linear-gradient(#00000030, transparent), url("./assets/blue.jpg");
 	background-position: top;
 	background-repeat: no-repeat;
@@ -82,10 +82,17 @@
 .popular-container {
 	background-color: var(--back-primary);
 }
+.popular-main {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 2.5vh 0rem;
+	flex-grow: 10;
+}
 .popular-head {
 	font-size: 3rem;
 	font-weight: 500;
-	padding: 0.5rem 1rem;
+	padding: 0rem 2rem 1.5rem 2rem;
 	color: var(--head-primary);
 }
 
