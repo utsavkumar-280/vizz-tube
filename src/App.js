@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import axios from "axios";
+import { useAppDataContext } from "./Context";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -19,6 +22,22 @@ import {
 } from "./Components";
 
 function App() {
+	const { state, dispatch } = useAppDataContext();
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const {
+					data: { response },
+				} = await axios.get("http://localhost:8040/videos");
+
+				dispatch({ type: "SET_VIDEOS", payload: response });
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	}, [dispatch]);
+	console.log(state);
 	return (
 		<div className="App">
 			<div className="app-container">
