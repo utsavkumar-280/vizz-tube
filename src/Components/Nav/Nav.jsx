@@ -1,13 +1,14 @@
 import "./nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaCompass, FaHeart } from "react-icons/fa";
 import { BsFillCollectionPlayFill, BsFillDisplayFill } from "react-icons/bs";
-import { MdPhoto } from "react-icons/md";
-import { FaBook, FaRegLaughSquint } from "react-icons/fa";
+import { FaBook, FaRegLaughSquint, FaFilm } from "react-icons/fa";
 import { RiHistoryLine } from "react-icons/ri";
 import { SiAdobelightroomcc, SiAdobephotoshop } from "react-icons/si";
 
 export const Nav = () => {
+	const search = new URLSearchParams(useLocation().search);
+	const searchedCategory = search.get("cat") ? search.get("cat") : "All Videos";
 	return (
 		<div className="nav-container">
 			<div className="nav-main">
@@ -61,9 +62,10 @@ export const Nav = () => {
 				<nav className="nav-category">
 					<div className="nav-head">CATEGORY</div>
 					<NavLink
-						to="/login"
-						className="cat-main"
-						activeClassName="nav-active"
+						to="/explore?cat=Basics"
+						className={`cat-main ${
+							searchedCategory === "Basics" ? "nav-active" : ""
+						}`}
 					>
 						<div className="nav-icons-container">
 							<FaBook className="nav-icons" />
@@ -72,42 +74,34 @@ export const Nav = () => {
 						<span className="cat-head">Basics</span>
 					</NavLink>
 					<NavLink
-						to="/login"
-						className="cat-main"
-						activeClassName="nav-active"
-					>
-						<div className="nav-icons-container">
-							<MdPhoto className="nav-icons" />
-						</div>
-
-						<span className="cat-head">Beginners</span>
-					</NavLink>
-					<NavLink
-						to="/login"
-						className="cat-main"
-						activeClassName="nav-active"
+						to="/explore?cat=Photoshop"
+						className={`cat-main ${
+							searchedCategory === "Photoshop" ? "nav-active" : ""
+						}`}
 					>
 						<div className="nav-icons-container">
 							<SiAdobephotoshop className="nav-icons" />
 						</div>
 
-						<span className="cat-head"> Photoshop</span>
+						<span className="cat-head">Photoshop</span>
 					</NavLink>
 					<NavLink
-						to="/login"
-						className="cat-main"
-						activeClassName="nav-active"
+						to="/explore?cat=Lightroom"
+						className={`cat-main ${
+							searchedCategory === "Lightroom" ? "nav-active" : ""
+						}`}
 					>
 						<div className="nav-icons-container">
 							<SiAdobelightroomcc className="nav-icons" />
 						</div>
 
-						<span className="cat-head"> Lightroom</span>
+						<span className="cat-head">Lightroom</span>
 					</NavLink>
 					<NavLink
-						to="/login"
-						className="cat-main"
-						activeClassName="nav-active"
+						to="/explore?cat=Video%20Editing"
+						className={`cat-main ${
+							searchedCategory === "Video Editing" ? "nav-active" : ""
+						}`}
 					>
 						<div className="nav-icons-container">
 							<BsFillDisplayFill className="nav-icons" />
@@ -116,15 +110,28 @@ export const Nav = () => {
 						<span className="cat-head">Video Editing</span>
 					</NavLink>
 					<NavLink
-						to="/not-related"
-						className="cat-main"
-						activeClassName="nav-active"
+						to="/explore?cat=Filmmaking"
+						className={`cat-main ${
+							searchedCategory === "Filmmaking" ? "nav-active" : ""
+						}`}
+					>
+						<div className="nav-icons-container">
+							<FaFilm className="nav-icons" />
+						</div>
+
+						<span className="cat-head">Filmmaking</span>
+					</NavLink>
+					<NavLink
+						to="/explore?cat=Not%20Related"
+						className={`cat-main ${
+							searchedCategory === "Not Related" ? "nav-active" : ""
+						}`}
 					>
 						<div className="nav-icons-container">
 							<FaRegLaughSquint className="nav-icons" />
 						</div>
 
-						<span className="cat-head">Not related</span>
+						<span className="cat-head">Not Related</span>
 					</NavLink>
 				</nav>
 			</div>

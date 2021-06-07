@@ -44,11 +44,17 @@
 	border-radius: 1.25rem;
 }
 
-.nav-active > div {
+.nav-active > .nav-icons-container {
+	transition: all 0.25s ease;
 	background-color: var(--primary);
 	color: var(--head-primary);
 }
-.nav-active > span {
+.nav-active > .menu-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+.nav-active > .cat-head {
+	transition: all 0.25s ease;
 	color: var(--head-primary);
 }
 .nav-icons {
@@ -69,6 +75,7 @@
 	text-decoration: none;
 	color: var(--head-secondary);
 	padding: 0rem 1.5rem;
+	transition: all 0.25s ease;
 }
 
 @media screen and (max-width: 740px) {
