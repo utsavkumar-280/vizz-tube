@@ -1,9 +1,10 @@
-const categories = [
+export const categories = [
+	"All Videos",
 	"Basics",
-	"Beginners",
 	"Photoshop",
 	"Lightroom",
-	"VideoEditing",
-	"NotRelated",
+	"Video Editing",
+	"Filmmaking",
+	"Not Related",
 	"Popular",
 ];
