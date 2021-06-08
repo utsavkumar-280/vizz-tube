@@ -12,13 +12,10 @@
 	justify-content: flex-start;
 	padding: 1.25rem 0rem;
 }
-
-.main-video {
-	display: block;
-	height: 67.5vh;
-	width: 100%;
+.main-video iframe {
 	border-radius: 3rem;
 }
+
 .video-details-info {
 	min-height: 20vh;
 	display: grid;

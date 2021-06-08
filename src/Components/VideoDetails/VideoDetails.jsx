@@ -1,4 +1,5 @@
 import "./styles.css";
+import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -28,13 +29,15 @@ export const VideoDetails = () => {
 		<div className="video-details-container">
 			{video !== null && (
 				<div className="video-details-main">
-					<section className="video-conatiner">
-						<iframe
-							src={`https://www.youtube-nocookie.com/embed/${video.vidURL}`}
-							title="YouTube video player"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
+					<section className="video-container">
+						<ReactPlayer
+							url={`https://www.youtube-nocookie.com/embed/${video.vidURL}`}
+							controls
+							playing
+							height={"67.5vh"}
+							width={"100%"}
 							className="main-video"
+							pip={true}
 						/>
 					</section>
 					<article className="video-details-info">
