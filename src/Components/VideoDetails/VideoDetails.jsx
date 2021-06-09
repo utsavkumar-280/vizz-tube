@@ -3,11 +3,13 @@ import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useToast, Box } from "@chakra-ui/react";
 
 export const VideoDetails = () => {
 	const [video, setVideo] = useState(null);
 	let { vidId } = useParams();
 	console.log("vidID:", vidId);
+	const toast = useToast();
 
 	useEffect(() => {
 		(async () => {
@@ -34,7 +36,7 @@ export const VideoDetails = () => {
 							url={`https://www.youtube-nocookie.com/embed/${video.vidURL}`}
 							controls
 							playing
-							height={"67.5vh"}
+							height={"100%"}
 							width={"100%"}
 							className="main-video"
 							pip={true}
@@ -55,7 +57,22 @@ export const VideoDetails = () => {
 						</section>
 						<section className="video-cta-container">
 							<button className="video-cta color-secondary">Like</button>
-							<button className="video-cta color-primary">Add to</button>
+							<button
+								className="video-cta color-primary"
+								onClick={() =>
+									toast({
+										render: () => (
+											<Box color="white" p={5} bg="blue.500">
+												Hello World
+											</Box>
+										),
+										duration: 2000,
+										isClosable: true,
+									})
+								}
+							>
+								Add
+							</button>
 						</section>
 					</article>
 				</div>
