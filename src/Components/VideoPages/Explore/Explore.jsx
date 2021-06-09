@@ -12,18 +12,20 @@ export const Explore = () => {
 		<div className="explore-container">
 			<div className="explore-main">
 				<nav className="category-toggle">
-					{categories.map((category) => {
-						return (
-							<NavLink
-								to={`?cat=${category}`}
-								className={`category-cta ${
-									searchedCategory === category ? "category-cta-active" : ""
-								}`}
-							>
-								{category}
-							</NavLink>
-						);
-					})}
+					{categories
+						.filter((cat) => cat !== "Popular")
+						.map((category) => {
+							return (
+								<NavLink
+									to={`?cat=${category}`}
+									className={`category-cta ${
+										searchedCategory === category ? "category-cta-active" : ""
+									}`}
+								>
+									{category}
+								</NavLink>
+							);
+						})}
 				</nav>
 				<section className="video-card-container">
 					{searchedCategory === "All Videos"
