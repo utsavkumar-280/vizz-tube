@@ -20,7 +20,7 @@ export const Home = () => {
 								of Photography
 								<br />
 							</p>
-							<Link to="/explore">
+							<Link to="/explore?cat=Basics">
 								<button className="discover-button">Watch Now</button>
 							</Link>
 						</div>
@@ -32,7 +32,7 @@ export const Home = () => {
 								<br />
 								right now
 							</p>
-							<Link to="/explore">
+							<Link to="/explore?cat=Video%20Editing">
 								<button className="discover-button">Watch Now</button>
 							</Link>
 						</div>
