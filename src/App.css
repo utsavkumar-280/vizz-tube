@@ -65,11 +65,11 @@ html {
 }
 @media screen and (max-width: 1240px) {
 	.app-main {
-		grid-template-columns: 1fr 4fr;
+		grid-template-columns: 1fr 5fr;
 	}
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 880px) {
 	.app-main {
 		grid-template-areas:
 			" header-area header-area"
