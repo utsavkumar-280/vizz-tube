@@ -2,7 +2,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 880px) {
 	.phone-nav-container {
 		display: block;
 		min-height: 10vh;
