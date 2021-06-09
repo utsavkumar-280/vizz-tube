@@ -21,6 +21,12 @@
 	width: 15vw;
 	height: auto;
 	border-radius: 2rem 2rem 0rem 0rem;
+	filter: contrast(87.5%);
+	transition: all 0.25s ease;
+}
+.card-thumbnail:hover {
+	filter: contrast(102.5%);
+	transition: all 0.25s ease;
 }
 
 .card-info {
@@ -61,6 +67,7 @@
 	letter-spacing: 0.1rem;
 	font-size: 1.25rem;
 	margin: 1rem 0rem;
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
@@ -72,4 +79,89 @@
 	border-radius: 50%;
 	padding: 0.5rem;
 	border: 0.1rem solid var(--head-primary);
+}
+
+@media screen and (max-width: 1380px) {
+	.card-container {
+		min-height: 30vh;
+		max-height: 40vh;
+		width: 18vw;
+	}
+	.card-thumbnail {
+		display: block;
+		width: 18vw;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 1240px) {
+	.card-container {
+		min-height: 30vh;
+		max-height: 40vh;
+		width: 23.25vw;
+	}
+	.card-thumbnail {
+		display: block;
+		width: 23.25vw;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.card-container {
+		min-height: 30vh;
+		max-height: 40vh;
+		width: 33.25vw;
+	}
+	.card-thumbnail {
+		display: block;
+		width: 33.25vw;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.card-container {
+		min-height: 30vh;
+		max-height: 40vh;
+		width: 41.25vw;
+	}
+	.card-thumbnail {
+		display: block;
+		width: 41.25vw;
+		height: auto;
+	}
+	.card-avatar {
+		top: 42.5%;
+	}
+}
+
+@media screen and (max-height: 640px) {
+	.card-container {
+		min-height: 30vh;
+		max-height: 55vh;
+		width: 41.25vw;
+	}
+	.card-thumbnail {
+		display: block;
+		width: 41.25vw;
+		height: auto;
+	}
+	.card-avatar {
+		top: 42.5%;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.card-container {
+		width: 80vw;
+		max-height: 57.5vh;
+	}
+	.card-thumbnail {
+		width: 80vw;
+		height: auto;
+	}
+	.card-avatar {
+		top: 55%;
+	}
 }
