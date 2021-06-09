@@ -1,7 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-
 .footer-container {
 	background-color: var(--back-primary);
 	color: var(--head-secondary);
@@ -74,8 +70,13 @@
 		width: 95%;
 	}
 }
+@media screen and (min-height: 1024px) {
+	.footer-container {
+		min-height: 25vh;
+	}
+}
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 880px) {
 	.footer-container {
 		min-height: 25vh;
 	}

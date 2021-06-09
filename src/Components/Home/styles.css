@@ -103,6 +103,12 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1.25fr;
 	}
+	.discover-edit {
+		margin: 0rem 2rem 2rem 2rem;
+	}
+	.discover-photo {
+		margin: 0rem 2rem 2rem 2rem;
+	}
 	.discover-container {
 		grid-template-rows: 10% 90%;
 	}
@@ -123,5 +129,35 @@
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: cover;
+	}
+	.discover-edit {
+		background: linear-gradient(#00000030, transparent),
+			url("./assets/orange.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width: 1380px) {
+	.popular-main {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (max-width: 1240px) {
+	.popular-main {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 1024px) {
+	.popular-main {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.popular-main {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
