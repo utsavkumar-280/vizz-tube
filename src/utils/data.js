@@ -8,3 +8,5 @@ export const categories = [
 	"Not Related",
 	"Popular",
 ];
+
+export const VIZZ_API = "https://vizztube-apis.herokuapp.com";

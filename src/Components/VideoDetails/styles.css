@@ -174,3 +174,13 @@
 		height: 5.5vh;
 	}
 }
+.toast-box {
+	background-color: var(--primary);
+	padding: 2.5rem;
+	border-radius: 1rem;
+	font-size: 2.5rem;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: space-between;
+}

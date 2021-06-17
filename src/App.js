@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useAppDataContext } from "./Context";
+import { VIZZ_API } from "./utils";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -29,7 +30,7 @@ function App() {
 			try {
 				const {
 					data: { response },
-				} = await axios.get("http://localhost:8040/videos");
+				} = await axios.get(`${VIZZ_API}/videos`);
 
 				dispatch({ type: "SET_VIDEOS", payload: response });
 			} catch (error) {

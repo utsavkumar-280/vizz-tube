@@ -3,20 +3,20 @@ import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useToast, Box } from "@chakra-ui/react";
+import { useToast, Box, CloseButton } from "@chakra-ui/react";
+import { VIZZ_API } from "../../utils";
 
 export const VideoDetails = () => {
 	const [video, setVideo] = useState(null);
 	let { vidId } = useParams();
 	console.log("vidID:", vidId);
 	const toast = useToast();
-
 	useEffect(() => {
 		(async () => {
 			try {
 				const {
 					data: { response },
-				} = await axios.get(`http://localhost:8040/videos/${vidId}`);
+				} = await axios.get(`${VIZZ_API}/videos/${vidId}`);
 				setVideo(response);
 				console.log("response:", response);
 			} catch (error) {
@@ -62,11 +62,12 @@ export const VideoDetails = () => {
 								onClick={() =>
 									toast({
 										render: () => (
-											<Box color="white" p={5} bg="blue.500">
+											<Box color="white" p={5} className=" toast-box">
 												Hello World
+												<CloseButton />
 											</Box>
 										),
-										duration: 2000,
+										// duration: 1500,
 										isClosable: true,
 									})
 								}
