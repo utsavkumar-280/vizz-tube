@@ -5,7 +5,7 @@
 	grid-area: main-app-area;
 }
 .explore-main {
-	/* min-height: 92.5vh; */
+	min-height: 92.5vh;
 	margin: 0rem 1rem;
 	display: flex;
 	flex-direction: column;
@@ -18,7 +18,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	flex-grow: 1;
+	/* flex-grow: 1; */
 	position: sticky;
 	top: 7.5vh;
 	z-index: 1;
@@ -55,6 +55,14 @@
 	grid-gap: 2.5vh 0rem;
 	flex-grow: 9;
 	padding: 2rem;
+}
+.loader-container {
+	color: var(--primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 10;
+	height: 100%;
 }
 
 @media screen and (max-width: 1380px) {

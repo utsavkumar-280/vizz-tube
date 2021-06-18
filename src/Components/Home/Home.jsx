@@ -2,6 +2,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import { VideoCard } from "../VideoCard";
 import { useAppDataContext } from "../../Context";
+import PulseLoader from "react-spinners/PulseLoader";
 
 export const Home = () => {
 	const { state } = useAppDataContext();
@@ -40,12 +41,20 @@ export const Home = () => {
 				</div>
 				<div className="popular-container">
 					<div className="popular-head">Popular</div>
-					<div className="popular-main">
-						{state.videos
-							.filter((video) => video.category === "Popular")
-							.map((video) => {
-								return <VideoCard video={video} key={video._id} />;
-							})}
+					<div
+						className={`${
+							state.videos.length !== 0 ? "popular-main" : "loader-container"
+						}`}
+					>
+						{state.videos.length !== 0 ? (
+							state.videos
+								.filter((video) => video.category === "Popular")
+								.map((video) => {
+									return <VideoCard video={video} key={video._id} />;
+								})
+						) : (
+							<PulseLoader loading={true} size={15} color={"#6c5ecf"} />
+						)}
 					</div>
 				</div>
 			</div>

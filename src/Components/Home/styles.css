@@ -82,6 +82,8 @@
 .popular-container {
 	background-color: var(--back-primary);
 	flex-grow: 1.25;
+	display: flex;
+	flex-direction: column;
 }
 .popular-main {
 	display: grid;
@@ -89,6 +91,7 @@
 	grid-template-rows: auto;
 	grid-gap: 2.5vh 0rem;
 	flex-grow: 10;
+	height: 100%;
 }
 .popular-head {
 	font-size: 3rem;
