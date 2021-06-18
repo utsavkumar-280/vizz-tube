@@ -9,6 +9,8 @@ export const VideoCard = ({ video }) => {
 					src={video.thumbnail}
 					alt="thumbnail-img"
 					className="card-thumbnail"
+					width="15vw"
+					height="auto"
 				/>
 			</Link>
 
