@@ -9,13 +9,22 @@ export const Footer = () => {
 				<div className="footer-left ">
 					<div className="footer-padding footer-para">Connect with me</div>
 					<div className="socialNav">
-						<a href="https://www.linkedin.com/in/utsav-kumar-a3a79b187/">
+						<a
+							href="https://www.linkedin.com/in/utsav-kumar-a3a79b187/"
+							aria-label="Linkedin-profile"
+						>
 							<i className="fab fa-linkedin-in"></i>
 						</a>
-						<a href="https://twitter.com/utsavkumar280">
+						<a
+							href="https://twitter.com/utsavkumar280"
+							aria-label="Twitter-handle"
+						>
 							<i className="fab fa-twitter"></i>
 						</a>
-						<a href="https://github.com/utsavkumar-280">
+						<a
+							href="https://github.com/utsavkumar-280"
+							aria-label="Github-profile"
+						>
 							<i className="fab fa-github"></i>
 						</a>
 					</div>

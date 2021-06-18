@@ -23,7 +23,10 @@ export const Header = () => {
 							placeholder="Search"
 							className="search-bar"
 						/>
-						<button className="search-icon-container">
+						<button
+							className="search-icon-container"
+							aria-label="search-button"
+						>
 							<BiSearch className="search-icon" />
 						</button>
 					</div>
