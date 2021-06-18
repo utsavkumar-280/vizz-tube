@@ -18,6 +18,7 @@ export const Explore = () => {
 							return (
 								<NavLink
 									to={`?cat=${category}`}
+									key={category}
 									className={`category-cta ${
 										searchedCategory === category ? "category-cta-active" : ""
 									}`}
