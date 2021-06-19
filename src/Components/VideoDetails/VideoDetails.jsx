@@ -2,6 +2,7 @@ import "./styles.css";
 import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useToast, Box, CloseButton } from "@chakra-ui/react";
 import { VIZZ_API } from "../../utils";
@@ -44,7 +45,9 @@ export const VideoDetails = () => {
 					</section>
 					<article className="video-details-info">
 						<section className="video-text">
-							<p className="video-cat">#{video.category}</p>
+							<Link to={`/explore?cat=${video.category}`} className="video-cat">
+								#{video.category}
+							</Link>
 							<h1 className="video-title">{video.title}</h1>
 							<section className="video-author-container">
 								<img
@@ -67,7 +70,7 @@ export const VideoDetails = () => {
 												<CloseButton />
 											</Box>
 										),
-										// duration: 1500,
+										duration: 1500,
 										isClosable: true,
 									})
 								}
