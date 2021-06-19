@@ -45,7 +45,7 @@ export const Nav = () => {
 							<BsFillCollectionPlayFill className="nav-icons" />
 						</div>
 
-						<span className="menu-head">Playlist</span>
+						<span className="menu-head">Playlists</span>
 					</NavLink>
 					<NavLink
 						to="/history"
