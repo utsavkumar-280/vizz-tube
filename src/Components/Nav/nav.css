@@ -67,6 +67,28 @@
 	align-items: center;
 	text-decoration: none;
 }
+.menu-main:hover > .nav-icons-container {
+	transition: all 0.25s ease;
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+
+.menu-main:hover > .menu-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+
+.cat-main:hover > .nav-icons-container {
+	transition: all 0.25s ease;
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+
+.cat-main:hover > .cat-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+
 .menu-head,
 .cat-head {
 	font-size: 1.5rem;
