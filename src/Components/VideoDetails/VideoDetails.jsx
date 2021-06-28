@@ -4,14 +4,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useToast, Box, CloseButton } from "@chakra-ui/react";
 import { VIZZ_API } from "../../utils";
+import PulseLoader from "react-spinners/PulseLoader";
 
 export const VideoDetails = () => {
 	const [video, setVideo] = useState(null);
 	let { vidId } = useParams();
-	console.log("vidID:", vidId);
-	const toast = useToast();
+	// console.log("vidID:", vidId);
 	useEffect(() => {
 		(async () => {
 			try {
@@ -19,7 +18,7 @@ export const VideoDetails = () => {
 					data: { response },
 				} = await axios.get(`${VIZZ_API}/videos/${vidId}`);
 				setVideo(response);
-				console.log("response:", response);
+				// console.log("response:", response);
 			} catch (error) {
 				console.log(error);
 				setVideo(null);
@@ -27,10 +26,10 @@ export const VideoDetails = () => {
 		})();
 	}, [vidId]);
 
-	console.log("video:", video);
+	// console.log("video:", video);
 	return (
 		<div className="video-details-container">
-			{video !== null && (
+			{video !== null ? (
 				<div className="video-details-main">
 					<section className="video-container">
 						<ReactPlayer
@@ -60,25 +59,13 @@ export const VideoDetails = () => {
 						</section>
 						<section className="video-cta-container">
 							<button className="video-cta color-secondary">Like</button>
-							<button
-								className="video-cta color-primary"
-								onClick={() =>
-									toast({
-										render: () => (
-											<Box color="white" p={5} className=" toast-box">
-												Hello World
-												<CloseButton />
-											</Box>
-										),
-										duration: 1500,
-										isClosable: true,
-									})
-								}
-							>
-								Add
-							</button>
+							<button className="video-cta color-primary">Add</button>
 						</section>
 					</article>
+				</div>
+			) : (
+				<div className="loader-container ">
+					<PulseLoader loading={true} size={15} color={"#6c5ecf"} />
 				</div>
 			)}
 		</div>
