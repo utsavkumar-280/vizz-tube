@@ -3,6 +3,9 @@
 	min-height: 92.5vh;
 	padding: 0.75rem;
 	font-family: "Poppins", sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .video-details-main {
@@ -33,6 +36,7 @@
 	font-weight: 300;
 	letter-spacing: 0.05rem;
 	color: var(--primary);
+	text-decoration: none;
 }
 .video-title {
 	font-size: 3.125rem;
