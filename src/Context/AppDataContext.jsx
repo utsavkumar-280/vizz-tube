@@ -7,8 +7,8 @@ export const AppDataProvider = ({ children }) => {
 	const initialState = {
 		videos: [],
 		playlists: [],
-		liked: [],
-		history: [],
+		liked: {},
+		history: {},
 	};
 
 	const [state, dispatch] = useReducer(AppDataReducer, initialState);

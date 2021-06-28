@@ -30,6 +30,14 @@ export const AppDataReducer = (state, { type, payload }) => {
 					(playlist) => playlist._id !== payload._id
 				),
 			};
+		case "RESET_STATE": {
+			return {
+				...state,
+				playlists: [],
+				liked: {},
+				history: {},
+			};
+		}
 
 		default:
 			return state;
