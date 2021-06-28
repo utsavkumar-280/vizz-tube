@@ -29,7 +29,8 @@
 }
 .discover-photo {
 	margin: 0rem 1rem 1.5rem 1rem;
-	background: linear-gradient(#00000030, transparent), url("./assets/blue.jpg");
+	background: linear-gradient(#00000030, transparent),
+		url("https://i.postimg.cc/sfT8mncv/blue.jpg");
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -46,7 +47,7 @@
 .discover-edit {
 	margin: 0rem 1rem 2rem 1rem;
 	background: linear-gradient(#00000030, transparent),
-		url("./assets/orange.jpg");
+		url("https://i.postimg.cc/15TdhfbS/orange.jpg");
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -128,14 +129,14 @@
 	}
 	.discover-photo {
 		background: linear-gradient(#00000050, transparent),
-			url("./assets/blue.jpg");
+			url("https://i.postimg.cc/sfT8mncv/blue.jpg");
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 	.discover-edit {
 		background: linear-gradient(#00000030, transparent),
-			url("./assets/orange.jpg");
+			url("https://i.postimg.cc/15TdhfbS/orange.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
