@@ -6,6 +6,12 @@ export { ErrorPage } from "./ErrorPage";
 export { VideoDetails } from "./VideoDetails";
 export { Nav, PhoneNav } from "./Nav";
 
-export { Login, Signup, ForgotPassword, PrivateRoute } from "./Auth";
+export { Profile, Login, Signup, ForgotPassword, PrivateRoute } from "./Auth";
 
-export { Explore, History, Liked, Playlist } from "./VideoPages";
+export {
+	Explore,
+	History,
+	Liked,
+	Playlists,
+	SearchedVideos,
+} from "./VideoPages";

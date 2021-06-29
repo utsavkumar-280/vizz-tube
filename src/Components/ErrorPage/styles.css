@@ -1,0 +1,37 @@
+.error-page-container {
+	min-height: 90vh;
+	background-color: var(--back-primary);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	font-family: "Poppins", sans-serif;
+	color: var(--head-primary);
+}
+
+.error-page-main {
+	background-color: var(--back-primary);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.error-hero {
+	width: 47.5vw;
+	height: auto;
+}
+.error-page-head {
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	text-align: center;
+	color: var(--primary);
+}
+.error-page-text {
+	margin-top: 1rem;
+	font-size: 2rem;
+	font-weight: 400;
+	letter-spacing: 0.15rem;
+	text-align: center;
+	color: var(--head-secondary);
+}

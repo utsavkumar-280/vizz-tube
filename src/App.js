@@ -11,7 +11,7 @@ import {
 	Home,
 	PrivateRoute,
 	Liked,
-	Playlist,
+	Playlists,
 	History,
 	Explore,
 	Login,
@@ -20,6 +20,9 @@ import {
 	Nav,
 	PhoneNav,
 	VideoDetails,
+	ErrorPage,
+	Profile,
+	SearchedVideos,
 } from "./Components";
 
 function App() {
@@ -50,12 +53,20 @@ function App() {
 							<Route path="/" element={<Home />} />
 							<Route path="/explore" element={<Explore />} />
 							<Route path="/explore/:vidId" element={<VideoDetails />} />
+
+							<PrivateRoute path="/liked" element={<Liked />} />
+							<PrivateRoute path="/playlists" element={<Playlists />} />
+							<PrivateRoute path="/history" element={<History />} />
+
+							<PrivateRoute path="/profile" element={<Profile />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/forgot-pass" element={<ForgotPassword />} />
-							<PrivateRoute path="/liked" element={<Liked />} />
-							<PrivateRoute path="/playlist" element={<Playlist />} />
-							<PrivateRoute path="/history" element={<History />} />
+
+							<Route path="/search" element={<SearchedVideos />} />
+
+							<Route path="*" element={<ErrorPage />} />
+							<Route path="/error" element={<ErrorPage />} />
 						</Routes>
 					</div>
 
