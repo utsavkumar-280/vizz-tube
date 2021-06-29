@@ -33,12 +33,12 @@ export const PhoneNav = () => {
 					<span className="phone-nav-head">History</span>
 				</NavLink>
 				<NavLink
-					to="/playlist"
+					to="/playlists"
 					className="phone-nav-menu"
 					activeClassName="phone-nav-active"
 				>
 					<BsFillCollectionPlayFill className="phone-nav-icons" />
-					<span className="phone-nav-head">Playlist</span>
+					<span className="phone-nav-head">Playlists</span>
 				</NavLink>
 			</div>
 		</div>

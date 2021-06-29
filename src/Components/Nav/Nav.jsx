@@ -37,7 +37,7 @@ export const Nav = () => {
 						<span className="menu-head">Liked</span>
 					</NavLink>
 					<NavLink
-						to="/playlist"
+						to="/playlists"
 						className="menu-main"
 						activeClassName="nav-active"
 					>
