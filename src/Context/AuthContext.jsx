@@ -7,18 +7,14 @@ import { VIZZ_API } from "../utils";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-	const { userName: userNameDetails, token: tokenDetails } = JSON.parse(
-		localStorage.getItem("user_cred")
-	) || {
+	const { userName, token } = JSON.parse(localStorage.getItem("user_cred")) || {
 		userName: "",
 		token: "",
 	};
 
-	console.log({ userNameDetails, tokenDetails });
-
 	const initialState = {
-		userName: userNameDetails,
-		token: tokenDetails,
+		userName,
+		token,
 		userDetails: null,
 	};
 
@@ -74,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 			});
 
 			axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-			console.log(axios.defaults.headers.common["Authorization"]);
+
 			navigate(from);
 		} catch (error) {
 			console.error(error);

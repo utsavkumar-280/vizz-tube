@@ -32,10 +32,11 @@ export const Login = () => {
 		const response = await login({ email, password, from });
 
 		if (response?.status !== 200) {
-			setLoginError(response?.data?.message);
+			setLoginError(response?.data?.message || "Please try again!");
 			setIsLoading(false);
 		}
 	};
+
 	return (
 		<div className="form-container">
 			<div className="form-main">
