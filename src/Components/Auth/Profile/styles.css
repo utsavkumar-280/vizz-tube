@@ -1,0 +1,55 @@
+.profile-container {
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.profile-main {
+	width: 80%;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.profile-card {
+	min-width: 40vw;
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5rem;
+	background-color: var(--back-card);
+	border-radius: 3rem;
+}
+
+.profile-logo {
+	font-size: 15rem;
+	color: var(--head-secondary);
+}
+
+.profile-text {
+	color: var(--head-secondary);
+	margin: 0.325rem;
+	font-size: 1.75rem;
+	letter-spacing: 0.1rem;
+	font-weight: 300;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.primary-color {
+	color: var(--head-primary);
+}
+@media screen and (max-width: 1024px) {
+	.profile-main {
+		width: 95%;
+	}
+	.profile-card {
+		min-width: 80vw;
+		padding: 2rem;
+	}
+}
