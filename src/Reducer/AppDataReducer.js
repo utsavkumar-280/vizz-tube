@@ -3,7 +3,7 @@ export const AppDataReducer = (state, { type, payload }) => {
 		case "SET_VIDEOS":
 			return { ...state, videos: payload };
 
-		case "SET_PLAYLIST":
+		case "SET_PLAYLISTS":
 			return { ...state, playlists: payload };
 
 		case "SET_LIKED":

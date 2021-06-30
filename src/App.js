@@ -80,7 +80,7 @@ function App() {
 		}
 	}, [token]);
 
-	console.log({ token });
+	// console.log({ token });
 	return (
 		<div className="App">
 			<div className="app-container">
