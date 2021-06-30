@@ -14,17 +14,17 @@ export const Signup = () => {
 					<h1 className="form-head">Sign Up</h1>
 					<Formik
 						initialValues={{
-							firstName: "",
-							lastName: "",
+							firstname: "",
+							lastname: "",
 							email: "",
 							password: "",
 							passwordConf: "",
 						}}
 						validationSchema={Yup.object({
-							firstName: Yup.string()
+							firstname: Yup.string()
 								.max(15, "Must be 15 characters or less")
 								.required("Required"),
-							lastName: Yup.string()
+							lastname: Yup.string()
 								.max(20, "Must be 20 characters or less")
 								.required("Required"),
 							email: Yup.string()
@@ -49,33 +49,33 @@ export const Signup = () => {
 					>
 						<Form className="form-field-container">
 							<div className="input-control">
-								<label htmlFor="firstName" className="form-label">
+								<label htmlFor="firstname" className="form-label">
 									First Name
 								</label>
 								<div className="input-field-container">
 									<Field
-										name="firstName"
+										name="firstname"
 										type="text"
 										placeholder="Enter firstname"
 										className="input-field"
 									/>
 								</div>
-								<ErrorMessage name="firstName" className="form-error" />
+								<ErrorMessage name="firstname" className="form-error" />
 							</div>
 
 							<div className="input-control">
-								<label htmlFor="lastName" className="form-label">
+								<label htmlFor="lastname" className="form-label">
 									Last Name
 								</label>
 								<div className="input-field-container">
 									<Field
-										name="lastName"
+										name="lastname"
 										type="text"
 										placeholder="Enter listname"
 										className="input-field"
 									/>
 								</div>
-								<ErrorMessage name="lastName" className="form-error" />
+								<ErrorMessage name="lastname" className="form-error" />
 							</div>
 
 							<div className="input-control">
