@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { FaUserCircle, FaYoutube } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
 import "./styles.css";
+import { useAuth } from "../../Context";
 
 export const Header = () => {
+	const {
+		state: { userName },
+	} = useAuth();
 	const [searchTerm, setSearchTerm] = useState("");
 
 	const navigate = useNavigate();
@@ -57,7 +61,9 @@ export const Header = () => {
 				<div className="head-right ">
 					<Link to="/profile" className="heading flex-align-center">
 						<FaUserCircle className="head-icons" />
-						<span className="head-hidden head-login ">Login</span>
+						<span className="head-hidden head-login ">
+							{userName ? userName : "Login"}
+						</span>
 					</Link>
 				</div>
 			</nav>
