@@ -70,9 +70,9 @@ function App() {
 
 					dispatch({ type: "SET_PLAYLISTS", payload: customPlaylists });
 
-					dispatch({ type: "LIKED", payload: likedPlaylist });
+					dispatch({ type: "SET_LIKED", payload: likedPlaylist });
 
-					dispatch({ type: "HISTORY", payload: historyPlaylist });
+					dispatch({ type: "SET_HISTORY", payload: historyPlaylist });
 				} catch (error) {
 					console.error(error);
 				}
