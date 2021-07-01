@@ -183,6 +183,23 @@
 	color: var(--secondary);
 	letter-spacing: 0.1rem;
 }
+.form-submitted {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--head-secondary);
+}
+.form-submitted > h1 {
+	text-align: center;
+}
+.form-submitted > p {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 500;
+	letter-spacing: 0.05rem;
+	color: var(--primary);
+}
 @media screen and (max-width: 1024px) {
 	.form-main {
 		width: 95%;

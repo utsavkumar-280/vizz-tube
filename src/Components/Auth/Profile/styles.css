@@ -39,17 +39,23 @@
 	letter-spacing: 0.1rem;
 	font-weight: 300;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 }
 .primary-color {
 	color: var(--head-primary);
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 880px) {
 	.profile-main {
 		width: 95%;
 	}
 	.profile-card {
 		min-width: 80vw;
 		padding: 2rem;
+	}
+}
+@media screen and (max-width: 540px) {
+	.profile-text {
+		display: grid;
+		grid-template-columns: auto;
 	}
 }

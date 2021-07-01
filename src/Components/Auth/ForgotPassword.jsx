@@ -49,7 +49,7 @@ export const ForgotPassword = () => {
 		<div className="form-container">
 			<div className="form-main">
 				{changedPass ? (
-					<div>
+					<div className="form-submitted">
 						<h1>Your password has been changed successfully.</h1>
 						<p>Please Login to Continue</p>
 					</div>

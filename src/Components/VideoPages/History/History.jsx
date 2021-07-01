@@ -49,9 +49,7 @@ export const History = () => {
 								<div className="flat-card-video-info">
 									<div className="flat-card-text">
 										<div className="flat-card-info">
-											<Link to="/" className="no-text-deco">
-												<p className="flat-card-category">#{video.category}</p>
-											</Link>
+											<p className="flat-card-category">#{video.category}</p>
 											<Link
 												to={`/explore/${video._id}`}
 												className="no-text-deco"

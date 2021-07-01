@@ -58,7 +58,7 @@ export const Signup = () => {
 				{token ? (
 					<Navigate to="/profile" replace />
 				) : signedUp ? (
-					<div>
+					<div className="form-submitted">
 						<h1>Thank you for creating an account</h1>
 						<p>Please Login to Continue</p>
 					</div>

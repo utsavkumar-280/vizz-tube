@@ -15,3 +15,9 @@
 	justify-content: flex-start;
 	background-color: var(--back-primary);
 }
+
+@media screen and (max-width: 540px) {
+	.liked-main {
+		width: 100%;
+	}
+}
