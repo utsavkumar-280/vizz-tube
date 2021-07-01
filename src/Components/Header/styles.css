@@ -101,6 +101,11 @@
 	font-size: 2.75rem;
 }
 
+@media screen and (max-width: 880px) {
+	.header-main {
+		width: 95%;
+	}
+}
 @media screen and (max-width: 740px) {
 	.header-container {
 		height: 10vh;

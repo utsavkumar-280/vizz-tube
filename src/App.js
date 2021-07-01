@@ -24,11 +24,12 @@ import {
 	ErrorPage,
 	Profile,
 	SearchedVideos,
+	PlaylistVideos,
 } from "./Components";
 
 function App() {
 	const navigate = useNavigate();
-	const { dispatch } = useAppDataContext();
+	const { state, dispatch } = useAppDataContext();
 	const {
 		state: { token },
 		logout,
@@ -80,7 +81,7 @@ function App() {
 		}
 	}, [token]);
 
-	// console.log({ token });
+	console.log({ state });
 	return (
 		<div className="App">
 			<div className="app-container">
@@ -95,6 +96,10 @@ function App() {
 
 							<PrivateRoute path="/liked" element={<Liked />} />
 							<PrivateRoute path="/playlists" element={<Playlists />} />
+							<PrivateRoute
+								path="/playlists/:playlistId"
+								element={<PlaylistVideos />}
+							/>
 							<PrivateRoute path="/history" element={<History />} />
 
 							<PrivateRoute path="/profile" element={<Profile />} />

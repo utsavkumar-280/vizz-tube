@@ -13,5 +13,6 @@ export {
 	History,
 	Liked,
 	Playlists,
+	PlaylistVideos,
 	SearchedVideos,
 } from "./VideoPages";

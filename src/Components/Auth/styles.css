@@ -12,7 +12,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 1rem 0;
 }
 .form-card {
 	display: flex;
@@ -202,7 +201,8 @@
 }
 @media screen and (max-width: 1024px) {
 	.form-main {
-		width: 95%;
+		width: 90%;
+		margin: 2.5rem 0;
 	}
 	.form-card {
 		box-shadow: none;

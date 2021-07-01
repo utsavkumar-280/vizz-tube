@@ -20,7 +20,11 @@ export const History = () => {
 				<div className="playlist-head-container">
 					<div className="playlist-text">
 						<h1 className="playlist-head">History</h1>
-						<p className="playlist-para">{history?.videos?.length} videos</p>
+						<p className="playlist-para">
+							{history?.videos?.length === 1
+								? `${history?.videos?.length} video`
+								: `${history?.videos?.length} videos`}
+						</p>
 					</div>
 
 					<button

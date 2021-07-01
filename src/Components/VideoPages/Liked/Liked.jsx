@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAppDataContext, useAuth } from "../../../Context";
-import { addOrRemoveVideoInPlaylist, clearHistory } from "../../../utils";
+import { addOrRemoveVideoInPlaylist } from "../../../utils";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import "./styles.css";
 
@@ -20,7 +20,11 @@ export const Liked = () => {
 				<div className="playlist-head-container">
 					<div className="playlist-text">
 						<h1 className="playlist-head">Liked videos</h1>
-						<p className="playlist-para">{liked?.videos?.length} videos</p>
+						<p className="playlist-para">
+							{liked?.videos?.length === 1
+								? `${liked?.videos?.length} video`
+								: `${liked?.videos?.length} videos`}
+						</p>
 					</div>
 				</div>
 				<div className="playlist-videos-container">
