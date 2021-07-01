@@ -1,8 +1,7 @@
 .explore-container {
 	background-color: var(--back-primary);
-	/* min-height: 92.5vh; */
+
 	font-family: "Poppins", sans-serif;
-	grid-area: main-app-area;
 }
 .explore-main {
 	min-height: 92.5vh;

@@ -95,6 +95,11 @@
 	color: var(--head-primary);
 	transition: all 0.25s ease;
 }
+.color-secondary-liked {
+	background-color: var(--secondary);
+	color: var(--head-primary);
+	transition: all 0.25s ease;
+}
 
 @media screen and (max-width: 1240px) {
 	.video-cta-container {

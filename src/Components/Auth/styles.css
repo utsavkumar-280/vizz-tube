@@ -175,6 +175,14 @@
 .marginTop1 {
 	margin-top: 0.5rem;
 }
+
+.login-error,
+.signup-error,
+.pass-error {
+	font-size: 1.5rem;
+	color: var(--secondary);
+	letter-spacing: 0.1rem;
+}
 @media screen and (max-width: 1024px) {
 	.form-main {
 		width: 95%;

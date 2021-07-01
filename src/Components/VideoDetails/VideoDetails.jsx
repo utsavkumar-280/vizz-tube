@@ -2,15 +2,29 @@ import "./styles.css";
 import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { VIZZ_API } from "../../utils";
+import {
+	addOrRemoveVideoInPlaylist,
+	VIZZ_API,
+	addVideosInPlaylist,
+} from "../../utils";
 import PulseLoader from "react-spinners/PulseLoader";
+import { useAppDataContext, useAuth } from "../../Context";
 
 export const VideoDetails = () => {
 	const [video, setVideo] = useState(null);
 	let { vidId } = useParams();
-	// console.log("vidID:", vidId);
+
+	const {
+		state: { history, liked },
+		dispatch,
+	} = useAppDataContext();
+	const {
+		state: { token },
+	} = useAuth();
+	// console.log({ liked }, { history });
+
 	useEffect(() => {
 		(async () => {
 			try {
@@ -18,7 +32,6 @@ export const VideoDetails = () => {
 					data: { response },
 				} = await axios.get(`${VIZZ_API}/videos/${vidId}`);
 				setVideo(response);
-				// console.log("response:", response);
 			} catch (error) {
 				console.log(error);
 				setVideo(null);
@@ -29,7 +42,9 @@ export const VideoDetails = () => {
 	// console.log("video:", video);
 	return (
 		<div className="video-details-container">
-			{video !== null ? (
+			{video === "error" ? (
+				<Navigate to="/error" replace />
+			) : video !== null ? (
 				<div className="video-details-main">
 					<section className="video-container">
 						<ReactPlayer
@@ -39,6 +54,17 @@ export const VideoDetails = () => {
 							height={"100%"}
 							width={"100%"}
 							className="main-video"
+							onStart={() => {
+								if (token) {
+									addVideosInPlaylist({
+										token,
+										type: "SET_HISTORY",
+										dispatch,
+										playlistId: history._id,
+										video: vidId,
+									});
+								}
+							}}
 							pip={true}
 						/>
 					</section>
@@ -58,7 +84,26 @@ export const VideoDetails = () => {
 							</section>
 						</section>
 						<section className="video-cta-container">
-							<button className="video-cta color-secondary">Like</button>
+							<button
+								className={
+									liked.videos?.find((vid) => vid.video._id == vidId)
+										? "video-cta color-secondary-liked"
+										: "video-cta color-secondary"
+								}
+								onClick={() => {
+									addOrRemoveVideoInPlaylist({
+										token,
+										type: "SET_LIKED",
+										dispatch,
+										playlistId: liked._id,
+										video: vidId,
+									});
+								}}
+							>
+								{liked.videos?.find((vid) => vid.video._id == vidId)
+									? "Liked"
+									: "Like"}
+							</button>
 							<button className="video-cta color-primary">Add</button>
 						</section>
 					</article>

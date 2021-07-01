@@ -1,4 +1,17 @@
 .liked-container {
 	background-color: var(--back-primary);
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.liked-main {
+	padding: 1rem;
+	width: 90%;
 	min-height: 92.5vh;
+	margin: 0rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: var(--back-primary);
 }
