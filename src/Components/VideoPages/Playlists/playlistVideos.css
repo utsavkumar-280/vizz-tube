@@ -1,0 +1,86 @@
+.playlistVideos-container {
+	background-color: var(--back-primary);
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.playlistVideos-main {
+	padding: 1rem;
+	width: 90%;
+	min-height: 92.5vh;
+	margin: 0rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: var(--back-primary);
+}
+
+.playlist-head-cta {
+	display: flex;
+	align-self: flex-start;
+}
+.margin1 {
+	margin: 1rem 0.5rem;
+}
+.title-input-container {
+	display: flex;
+}
+
+.title-cta-container {
+	display: flex;
+	align-items: center;
+}
+.title-input {
+	width: 35vw;
+	border: 0.35rem solid var(--back-primary);
+	border-radius: 1rem;
+	outline: none;
+	font-size: 2rem;
+	font-weight: 500;
+	padding: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+.title-input:focus {
+	border: 0.35rem solid var(--primary);
+}
+
+.title-cta {
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: var(--primary);
+	color: var(--head-primary);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all ease 0.25s;
+	margin: 0 0.5rem;
+}
+.title-cta-sec {
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: var(--secondary);
+	color: var(--head-primary);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all ease 0.25s;
+	margin: 0 0.5rem;
+}
+.title-icon {
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+@media screen and (max-width: 540px) {
+	.playlistVideos-main {
+		padding: 1rem 0;
+		/* width: 95%; */
+	}
+}

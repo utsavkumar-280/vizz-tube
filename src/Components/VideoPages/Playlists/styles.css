@@ -45,8 +45,13 @@
 	text-decoration: none;
 	font-size: 2rem;
 	text-align: center;
+	transition: all ease 0.25s;
 }
-
+.playlist-box:hover {
+	background-color: var(--primary);
+	color: var(--head-primary);
+	transition: all ease 0.25s;
+}
 @media screen and (max-width: 1600px) {
 	.playlists-list {
 		display: grid;

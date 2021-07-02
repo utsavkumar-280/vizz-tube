@@ -1,5 +1,7 @@
 import { useAppDataContext } from "../../../Context";
+
 import { Link } from "react-router-dom";
+
 import "./styles.css";
 
 export const Playlists = () => {
@@ -7,7 +9,6 @@ export const Playlists = () => {
 		state: { playlists },
 	} = useAppDataContext();
 
-	// console.log(playlists);
 	return (
 		<div className="playlists-container">
 			<div className="playlists-main">
@@ -19,6 +20,7 @@ export const Playlists = () => {
 							: `${2 + playlists?.length} playlists`}
 					</p>
 				</div>
+
 				<div className="playlists-list">
 					<Link to="/liked" className="playlist-box">
 						Liked videos
@@ -28,7 +30,11 @@ export const Playlists = () => {
 					</Link>
 
 					{playlists?.map((playlist) => (
-						<Link to={`playlists/${playlist._id}`} className="playlist-box">
+						<Link
+							to={`${playlist._id}`}
+							className="playlist-box"
+							key={playlist._id}
+						>
 							{playlist.title}
 						</Link>
 					))}

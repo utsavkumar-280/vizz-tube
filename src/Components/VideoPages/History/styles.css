@@ -26,6 +26,9 @@
 	font-size: 3rem;
 	color: var(--head-primary);
 	letter-spacing: 0.1rem;
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
 }
 .playlist-para {
 	font-size: 1.5rem;
@@ -53,7 +56,11 @@
 	color: var(--head-primary);
 	transition: all ease 0.25s;
 }
-
+.playlist-text {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
 .video-flat-card {
 	display: grid;
 	grid-template-columns: 1fr 9fr;
@@ -113,6 +120,11 @@
 	font-weight: 500;
 	letter-spacing: 0.05rem;
 	color: var(--head-primary);
+	transition: all ease 0.25s;
+}
+.flat-card-title:hover {
+	color: var(--primary);
+	transition: all ease 0.25s;
 }
 .flat-card-author {
 	font-size: 1.5rem;

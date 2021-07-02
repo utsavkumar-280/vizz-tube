@@ -4,26 +4,44 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { FaPlusCircle, FaCheckCircle } from "react-icons/fa";
 import {
 	addOrRemoveVideoInPlaylist,
 	VIZZ_API,
 	addVideosInPlaylist,
+	createPlaylist,
 } from "../../utils";
 import PulseLoader from "react-spinners/PulseLoader";
 import { useAppDataContext, useAuth } from "../../Context";
 
 export const VideoDetails = () => {
 	const [video, setVideo] = useState(null);
+	const [playlistTitle, setPlaylistTitle] = useState("");
+	const [playlistModal, setPlaylistModal] = useState(false);
+	const [newPlaylistInput, setNewPlaylistInput] = useState(false);
 	let { vidId } = useParams();
 
+	const formSubmit = (e) => {
+		e.preventDefault();
+		createPlaylist({
+			dispatch,
+			token,
+			video,
+			title: playlistTitle,
+			setPlaylistTitle,
+		});
+		setPlaylistModal((prev) => !prev);
+		setNewPlaylistInput(false);
+	};
+
 	const {
-		state: { history, liked },
+		state: { history, liked, playlists },
 		dispatch,
 	} = useAppDataContext();
+
 	const {
 		state: { token },
 	} = useAuth();
-	// console.log({ liked }, { history });
 
 	useEffect(() => {
 		(async () => {
@@ -39,7 +57,6 @@ export const VideoDetails = () => {
 		})();
 	}, [vidId]);
 
-	// console.log("video:", video);
 	return (
 		<div className="video-details-container">
 			{video === "error" ? (
@@ -104,7 +121,94 @@ export const VideoDetails = () => {
 									? "Liked"
 									: "Like"}
 							</button>
-							<button className="video-cta color-primary">Add</button>
+							<button
+								className="video-cta color-primary"
+								onClick={() => setPlaylistModal((prev) => !prev)}
+							>
+								Add
+							</button>
+							<div
+								className="modal-bg"
+								style={{ display: playlistModal ? "block" : "none" }}
+							>
+								<section className="modal-container">
+									<section className="modal-main">
+										<div className="modal-head">
+											<h2>Add to</h2>
+											<button
+												className="modal-cta"
+												onClick={() => setPlaylistModal((prev) => !prev)}
+											>
+												Close
+											</button>
+										</div>
+										<div className="modal-hero">
+											{playlists.map((playlist) => (
+												<div className="modal-row" key={playlist._id}>
+													<button
+														className="modal-add-cta"
+														onClick={() => {
+															addOrRemoveVideoInPlaylist({
+																playlistId: playlist._id,
+																token,
+																dispatch,
+																video: vidId,
+																type: "UPDATE_PLAYLIST",
+															});
+														}}
+													>
+														{playlist.videos?.find(
+															(vid) => vid.video._id === vidId
+														) ? (
+															<FaCheckCircle className="modal-icon" />
+														) : (
+															<FaPlusCircle className="modal-icon" />
+														)}
+
+														<p>{playlist.title}</p>
+													</button>
+												</div>
+											))}
+										</div>
+										<div className="modal-footer">
+											<div className="modal-row">
+												<button
+													style={{
+														display: newPlaylistInput ? "none" : "flex",
+													}}
+													onClick={() => setNewPlaylistInput(true)}
+													className="modal-add-cta"
+												>
+													<FaPlusCircle className="modal-icon" />
+													<p>Add to New Playlist</p>
+												</button>
+												{newPlaylistInput && (
+													<section className="modal-form-container">
+														<form className="modal-form" onSubmit={formSubmit}>
+															<input
+																className="modal-form-input"
+																value={playlistTitle}
+																type="text"
+																autoFocus
+																required
+																onChange={(e) =>
+																	setPlaylistTitle(e.target.value)
+																}
+															/>
+															<button
+																className="modal-form-submit"
+																type="submit"
+															>
+																Add to this Playlist
+															</button>
+														</form>
+													</section>
+												)}
+											</div>
+										</div>
+									</section>
+								</section>
+							</div>
 						</section>
 					</article>
 				</div>
