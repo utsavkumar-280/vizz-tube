@@ -65,7 +65,7 @@ export const ForgotPassword = () => {
 								password: Yup.string()
 									.matches(
 										/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-										"password should contain minimum 8 characters (Atleast a number, an uppercase character and a lowercase character)"
+										"password should contain minimum 8 characters (Atleast a number, an uppercase character, a lowercase character and a special character)"
 									)
 									.required("Password required"),
 								passwordConf: Yup.string().oneOf(
