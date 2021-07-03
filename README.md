@@ -14,5 +14,5 @@ Features:
 - Login/Signup/Change Password.
 - Authentication using Jwt.
 
-Github:[Backend](https://github.com/utsavkumar-280/vizztube-backend)
-Deployed: [Backend](https://vizztube-apis.herokuapp.com/)
+* Github: [Backend](https://github.com/utsavkumar-280/vizztube-backend)
+* Deployed: [Backend](https://vizztube-apis.herokuapp.com/)
