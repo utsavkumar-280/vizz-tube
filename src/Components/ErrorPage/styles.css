@@ -35,3 +35,10 @@
 	text-align: center;
 	color: var(--head-secondary);
 }
+
+@media screen and (max-width: 880px) {
+	.error-hero {
+		width: 100%;
+		height: auto;
+	}
+}
