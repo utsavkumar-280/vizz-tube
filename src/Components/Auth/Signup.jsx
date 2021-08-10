@@ -97,20 +97,18 @@ export const Signup = () => {
 								{ firstname, lastname, email, password },
 								{ setSubmitting }
 							) => {
-								setTimeout(() => {
-									formSubmit({
-										firstname,
-										lastname,
-										email,
-										password,
-										from: previousPath,
-										setSignupError,
-										setIsLoading,
-										setSignedUp,
-										signup,
-									});
-									setSubmitting(false);
-								}, 400);
+								formSubmit({
+									firstname,
+									lastname,
+									email,
+									password,
+									from: previousPath,
+									setSignupError,
+									setIsLoading,
+									setSignedUp,
+									signup,
+								});
+								setSubmitting(false);
 							}}
 						>
 							<Form className="form-field-container">

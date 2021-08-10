@@ -56,17 +56,15 @@ export const Login = () => {
 									.required("Password required"),
 							})}
 							onSubmit={({ email, password }, { setSubmitting }) => {
-								setTimeout(() => {
-									formSubmit({
-										email,
-										password,
-										from: previousPath,
-										login,
-										setIsLoading,
-										setLoginError,
-									});
-									setSubmitting(false);
-								}, 400);
+								formSubmit({
+									email,
+									password,
+									from: previousPath,
+									login,
+									setIsLoading,
+									setLoginError,
+								});
+								setSubmitting(false);
 							}}
 						>
 							<Form className="form-field-container">

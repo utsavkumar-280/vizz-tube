@@ -20,6 +20,6 @@ export const AuthReducer = (state, { type, payload }) => {
 			};
 
 		default:
-			throw new Error("Cant handle this type of action");
+			throw new Error("Can't handle this type of action");
 	}
 };
