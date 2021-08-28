@@ -1,0 +1,80 @@
+:root {
+	--back-primary: #1f1d2b;
+	--back-secondary: #353340;
+	--back-card: #262837;
+	--head-primary: #ffffff;
+	--head-secondary: #808191;
+	--primary: #6c5ecf;
+	--secondary: #ea5f5f;
+}
+
+* {
+	box-sizing: border-box;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+
+.app-container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--back-primary);
+}
+.app-main {
+	width: 97.5%;
+	display: grid;
+	grid-template-columns: 1fr 7fr;
+	grid-template-areas:
+		" header-area header-area"
+		"nav-area main-app-area"
+		"nav-area footer-area";
+}
+.main-routes {
+	min-height: 92.5vh;
+	grid-area: main-app-area;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 1.85rem;
+}
+
+::-webkit-scrollbar-track {
+	border: 0.5rem solid var(--back-primary);
+	background-color: var(--back-primary);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--back-secondary);
+	border: 0.5rem solid var(--back-primary);
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--head-secondary);
+}
+
+@media screen and (max-width: 1380px) {
+	.app-main {
+		grid-template-columns: 1fr 6fr;
+	}
+}
+@media screen and (max-width: 1240px) {
+	.app-main {
+		grid-template-columns: 1fr 5fr;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.app-main {
+		grid-template-areas:
+			" header-area header-area"
+			"main-app-area main-app-area"
+			"footer-area footer-area";
+		width: 100%;
+	}
+}

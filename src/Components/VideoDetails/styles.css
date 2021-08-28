@@ -1,0 +1,342 @@
+.video-details-container {
+	background-color: var(--back-primary);
+	min-height: 92.5vh;
+	padding: 0.75rem;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.video-details-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 1.25rem 0rem;
+}
+.video-container {
+	height: 67.5vh;
+	width: 100%;
+}
+
+.main-video iframe {
+	border-radius: 3rem;
+}
+
+.video-details-info {
+	min-height: 20vh;
+	display: grid;
+	grid-template-columns: 75% 25%;
+}
+.video-text {
+	padding: 1.5rem;
+}
+.video-cat {
+	font-size: 1.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+	color: var(--primary);
+	text-decoration: none;
+}
+.video-title {
+	font-size: 3.125rem;
+	font-weight: 600;
+	letter-spacing: 0.025rem;
+	color: var(--head-primary);
+}
+.video-author {
+	font-size: 2.125rem;
+	font-weight: 500;
+	letter-spacing: 0.05rem;
+	color: var(--head-secondary);
+}
+.video-author-container {
+	margin: 1rem 0rem;
+	display: flex;
+	align-items: center;
+}
+.author-avatar {
+	height: 6vh;
+	border-radius: 50%;
+	margin: 0 1rem 0 0;
+	padding: 0.55rem;
+	border: 0.2rem solid var(--back-secondary);
+}
+
+.video-cta-container {
+	padding: 4.5rem 0.5rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+.video-cta {
+	padding: 0.75rem 4rem;
+	margin: 0 1.5rem;
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: "Poppins", sans-serif;
+	letter-spacing: 0.05rem;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+.color-primary {
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+
+.color-secondary {
+	border: 0.2rem solid var(--back-secondary);
+	background-color: transparent;
+	color: var(--head-primary);
+	transition: all 0.25s ease;
+}
+.color-secondary:hover {
+	background-color: var(--secondary);
+	color: var(--head-primary);
+	transition: all 0.25s ease;
+}
+.color-secondary-liked {
+	background-color: var(--secondary);
+	color: var(--head-primary);
+	transition: all 0.25s ease;
+}
+
+.modal-bg {
+	position: fixed;
+	width: 100%;
+	min-height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-container {
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(1px);
+}
+
+.modal-main {
+	width: 20vw;
+	background-color: var(--back-primary);
+	border-radius: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.modal-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+	border-bottom: 0.01rem solid var(--back-secondary);
+}
+.modal-head > h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+	color: var(--head-primary);
+}
+.modal-hero {
+	padding: 1.5rem;
+}
+.modal-footer {
+	border-top: 0.01rem solid var(--back-secondary);
+	padding: 1.5rem;
+}
+.modal-row {
+	display: flex;
+	width: 100%;
+	padding: 0.5rem 0rem;
+}
+
+.modal-add-cta {
+	display: flex;
+	align-items: center;
+	background-color: var(--back-primary);
+	color: var(--head-secondary);
+	cursor: pointer;
+	transition: all ease 0.25s;
+}
+.modal-add-cta > p {
+	font-size: 1.75rem;
+	font-weight: 500;
+	margin: 0 1rem;
+	letter-spacing: 0.05rem;
+	font-family: "Poppins", sans-serif;
+	/* transition: all ease 0.25s; */
+}
+.modal-add-cta:hover > .modal-icon {
+	color: var(--primary);
+	transition: all ease 0.25s;
+}
+.modal-add-cta:hover > p {
+	color: var(--head-primary);
+	transition: all ease 0.25s;
+}
+
+.modal-icon {
+	font-size: 2rem;
+}
+.modal-cta {
+	cursor: pointer;
+	font-size: 1.75rem;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+	background-color: var(--back-secondary);
+	color: var(--head-secondary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all ease 0.25s;
+}
+
+.modal-cta:hover {
+	background-color: var(--primary);
+	color: var(--head-primary);
+	transition: all ease 0.25s;
+}
+
+.modal-form-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 1rem;
+}
+.modal-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modal-form-input {
+	width: 100%;
+	margin-bottom: 1rem 0;
+	font-size: 2rem;
+	border-radius: 2rem;
+	padding: 1rem 2rem;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	font-family: "Poppins", sans-serif;
+	outline: none;
+	border: 0.35rem solid var(--back-primary);
+}
+.modal-form-input:focus {
+	border: 0.35rem solid var(--primary);
+}
+.modal-form-submit {
+	width: 100%;
+	background-color: var(--primary);
+	color: var(--head-primary);
+	padding: 1rem 2rem;
+	margin-top: 1rem;
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	font-family: "Poppins", sans-serif;
+}
+@media screen and (max-width: 1240px) {
+	.video-cta-container {
+		padding: 3rem 0.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+	}
+	.video-cta {
+		padding: 0.75rem 4rem;
+		margin: 0rem 1.5rem 1.5rem 1.5rem;
+	}
+	.modal-main {
+		width: 30vw;
+	}
+}
+@media screen and (max-width: 880px) {
+	.video-details-container {
+		padding: 0rem;
+	}
+
+	.video-details-main {
+		padding: 0rem;
+	}
+	.video-container {
+		height: 40vh;
+		width: 100%;
+	}
+	.main-video iframe {
+		border-radius: 0rem;
+	}
+	.main-video {
+		width: 100%;
+		height: 40vh;
+	}
+
+	.video-details-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.video-cta-container {
+		padding: 0.5rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.modal-main {
+		width: 50vw;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.video-cat {
+		font-size: 1.325rem;
+	}
+	.video-title {
+		font-size: 2.75rem;
+	}
+	.video-author {
+		font-size: 1.75rem;
+	}
+
+	.video-author-container {
+		margin: 0.5rem 0rem;
+	}
+	.author-avatar {
+		height: 10vh;
+	}
+	.modal-main {
+		width: 70vw;
+	}
+}
+
+@media screen and (max-width: 411px) {
+	.video-title {
+		font-size: 2.5rem;
+	}
+
+	.video-author-container {
+		margin: 0.25rem 0rem;
+	}
+	.author-avatar {
+		height: 7.5vh;
+	}
+}
+.toast-box {
+	background-color: var(--primary);
+	padding: 2.5rem;
+	border-radius: 1rem;
+	font-size: 2.5rem;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: space-between;
+}

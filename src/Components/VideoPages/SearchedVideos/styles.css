@@ -1,0 +1,26 @@
+.searched-container {
+	background-color: var(--back-primary);
+	/* min-height: 92.5vh; */
+	font-family: "Poppins", sans-serif;
+}
+.searched-main {
+	min-height: 92.5vh;
+	margin: 0rem 1rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--back-primary);
+}
+
+.searched-head {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--head-primary);
+}
+.searched-text {
+	font-size: 2rem;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+	text-align: center;
+}

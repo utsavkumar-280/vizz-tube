@@ -1,0 +1,140 @@
+* {
+	box-sizing: border-box;
+}
+.header-container {
+	height: 7.5vh;
+	background-color: var(--back-primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Poppins", sans-serif;
+
+	position: sticky;
+	top: 0;
+	left: 0;
+	grid-area: header-area;
+	z-index: 1;
+}
+
+.header-main {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.head-left {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head-main-logo {
+	color: var(--head-primary);
+	text-decoration: none;
+	font-size: 2.25rem;
+	font-weight: 600;
+	font-style: italic;
+	letter-spacing: 0.1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.head-logo {
+	font-size: 4rem;
+	margin: 0rem 0.5rem;
+}
+
+.heading {
+	text-decoration: none;
+	color: var(--head-primary);
+	font-size: 1.5rem;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	margin: 0rem 0.75rem;
+}
+
+.flex-align-center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	background-color: var(--back-secondary);
+	border-radius: 1rem;
+}
+.search-bar {
+	min-width: 30vw;
+	font-family: "Poppins", sans-serif;
+	letter-spacing: 0.05rem;
+	background-color: var(--back-secondary);
+	color: var(--head-primary);
+	font-size: 1.25rem;
+	border-radius: 1rem 0rem 0rem 1rem;
+	padding: 1rem 1.75rem;
+}
+.search-bar:focus {
+	outline: none;
+}
+
+.search-icon-container {
+	border-radius: 0rem 1rem 1rem 0rem;
+	background-color: var(--back-secondary);
+	padding: 1rem 1.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.search-icon {
+	font-size: 1.75rem;
+	background-color: var(--back-secondary);
+	color: var(--head-secondary);
+}
+
+.head-login {
+	margin: 0rem 0.75rem;
+}
+.head-icons {
+	font-size: 2.75rem;
+}
+
+@media screen and (max-width: 880px) {
+	.header-main {
+		width: 95%;
+	}
+}
+@media screen and (max-width: 740px) {
+	.header-container {
+		height: 10vh;
+		border-bottom: 0.05rem solid var(--back-secondary);
+	}
+	.search-bar {
+		width: 35vw;
+		padding: 0.75rem 1rem;
+	}
+	.search-icon-container {
+		padding: 0.75rem 1rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.header-container {
+		padding: 1rem;
+	}
+	.search-bar {
+		width: 45vw;
+		padding: 0.65rem 1rem;
+	}
+	.search-icon-container {
+		padding: 0.65rem 1rem;
+	}
+	.head-vizztube {
+		display: none;
+	}
+	.head-hidden {
+		display: none;
+	}
+}

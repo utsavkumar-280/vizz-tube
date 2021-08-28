@@ -1,0 +1,113 @@
+.footer-container {
+	background-color: var(--back-primary);
+	color: var(--head-secondary);
+	min-height: 15vh;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	grid-area: footer-area;
+}
+
+.footer-main {
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2.5rem 0rem;
+}
+
+.footer-logo {
+	font-size: 3.25rem;
+	font-weight: 600;
+	font-style: italic;
+	font-family: "Poppins", sans-serif;
+	color: var(--head-secondary);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+}
+.connectMe {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-weight: 300;
+	color: var(--head-secondary);
+	font-size: 1.5rem;
+}
+.connectMe > a {
+	text-decoration: none;
+	font-style: italic;
+	font-weight: 500;
+	color: var(--primary);
+	font-size: 1.5rem;
+}
+.footer-name-padding {
+	padding: 0rem 0.25rem;
+}
+.footer-padding {
+	padding: 1rem 0.75rem;
+}
+.footer-para {
+	font-size: 1.75rem;
+	font-weight: 500;
+	font-family: "Poppins", sans-serif;
+}
+
+.socialNav {
+	display: flex;
+}
+.socialNav > a > i {
+	font-size: 2.5rem;
+	color: var(--head-secondary);
+	padding: 0rem 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.footer-main {
+		width: 95%;
+	}
+}
+@media screen and (min-height: 1024px) {
+	.footer-container {
+		min-height: 25vh;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.footer-container {
+		min-height: 25vh;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.footer-container {
+		min-height: 40vh;
+	}
+	.footer-main {
+		width: 95%;
+		padding: 1.5rem 0rem;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.connectMe {
+		justify-content: center;
+	}
+	.footer-left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem 0 0 0;
+	}
+	.footer-para {
+		font-size: 1.5rem;
+	}
+	.socialNav > a {
+		font-size: 1rem;
+	}
+}

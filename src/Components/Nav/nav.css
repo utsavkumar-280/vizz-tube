@@ -1,0 +1,129 @@
+.nav-container {
+	grid-area: nav-area;
+	height: 92.5vh;
+	position: sticky;
+	top: 7.5vh;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: "Poppins", sans-serif;
+}
+
+.nav-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 92.5vh;
+	/* overflow-y: scroll; */
+}
+
+.nav-head {
+	color: var(--head-secondary);
+	font-size: 1.25rem;
+	letter-spacing: 0.1rem;
+}
+
+.nav-menu,
+.nav-category {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin: 2rem 0.5rem 5rem 0.5rem;
+}
+
+.nav-icons-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--back-secondary);
+	color: var(--head-secondary);
+	padding: 1rem 1.125rem;
+	margin: 0rem 0rem 0rem 0.25rem;
+	border-radius: 1.25rem;
+}
+
+.nav-active > .nav-icons-container {
+	transition: all 0.25s ease;
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+.nav-active > .menu-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+.nav-active > .cat-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+.nav-icons {
+	font-size: 1.75rem;
+}
+.menu-main,
+.cat-main {
+	margin: 1.5rem 0rem;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+.menu-main:hover > .nav-icons-container {
+	transition: all 0.25s ease;
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+
+.menu-main:hover > .menu-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+
+.cat-main:hover > .nav-icons-container {
+	transition: all 0.25s ease;
+	background-color: var(--primary);
+	color: var(--head-primary);
+}
+
+.cat-main:hover > .cat-head {
+	transition: all 0.25s ease;
+	color: var(--head-primary);
+}
+
+.menu-head,
+.cat-head {
+	font-size: 1.5rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+	text-decoration: none;
+	color: var(--head-secondary);
+	padding: 0rem 1.5rem;
+	transition: all 0.25s ease;
+}
+
+@media screen and (max-width: 880px) {
+	.nav-container {
+		display: none;
+	}
+}
+
+@media screen and (max-height: 840px) {
+	.nav-container {
+		overflow-y: scroll;
+		/* Scrollbar */
+	}
+	.nav-container::-webkit-scrollbar {
+		width: 1.75rem;
+	}
+
+	.nav-container::-webkit-scrollbar-track {
+		background-color: var(--back-primary);
+	}
+	.nav-container::-webkit-scrollbar-thumb {
+		background: var(--back-secondary);
+		border-radius: 1rem;
+	}
+
+	.nav-container::-webkit-scrollbar-thumb:hover {
+		background: var(--head-secondary);
+	}
+}

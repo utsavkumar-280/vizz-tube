@@ -1,0 +1,51 @@
+.phone-nav-container {
+	display: none;
+}
+
+@media screen and (max-width: 880px) {
+	.phone-nav-container {
+		display: block;
+		min-height: 10vh;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background-color: var(--back-primary);
+		border-top: 0.05rem solid var(--back-secondary);
+		font-family: "Poppins", sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.phone-nav-main {
+		height: 10vh;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+	}
+	.phone-nav-menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: var(--head-secondary);
+		padding: 1rem;
+	}
+	.phone-nav-active > .phone-nav-icons {
+		color: var(--primary);
+	}
+	.phone-nav-active > .phone-nav-head {
+		color: var(--head-primary);
+	}
+	.phone-nav-icons {
+		font-size: 2.75rem;
+	}
+	.phone-nav-head {
+		font-size: 1.125rem;
+		font-weight: 300;
+		letter-spacing: 0.075rem;
+		padding: 0.5rem 0rem;
+	}
+}

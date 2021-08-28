@@ -1,0 +1,115 @@
+.explore-container {
+	background-color: var(--back-primary);
+
+	font-family: "Poppins", sans-serif;
+}
+.explore-main {
+	min-height: 92.5vh;
+	margin: 0rem 1rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--back-primary);
+}
+.category-toggle {
+	background-color: var(--back-primary);
+	padding: 0.75rem 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	/* flex-grow: 1; */
+	position: sticky;
+	top: 7.5vh;
+	z-index: 1;
+}
+
+.category-cta {
+	display: block;
+	margin: 0.5rem;
+	padding: 0.5rem 2rem;
+	font-size: 1.625rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+	border: 0.1rem solid var(--back-secondary);
+	border-radius: 2rem;
+	text-decoration: none;
+	color: var(--head-secondary);
+	transition: all 0.25s ease;
+}
+.category-cta:hover {
+	color: var(--head-primary);
+	background-color: var(--primary);
+	transition: all 0.25s ease;
+}
+.category-cta-active {
+	color: var(--head-primary);
+	background-color: var(--primary);
+	transition: all 0.25s ease;
+}
+
+.video-card-container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 2.5vh 0rem;
+	flex-grow: 9;
+	padding: 2rem;
+}
+.loader-container {
+	color: var(--primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 10;
+	height: 100%;
+}
+
+@media screen and (max-width: 1380px) {
+	.video-card-container {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (max-width: 1240px) {
+	.video-card-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 1024px) {
+	.video-card-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 880px) {
+	.explore-main {
+		margin: 0rem;
+	}
+	.category-toggle {
+		width: 100%;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.category-toggle::-webkit-scrollbar {
+		display: none;
+	}
+
+	.category-cta {
+		white-space: nowrap;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.category-toggle {
+		position: sticky;
+		top: 10vh;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.video-card-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
