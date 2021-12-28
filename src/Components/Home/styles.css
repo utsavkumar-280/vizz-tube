@@ -29,8 +29,7 @@
 }
 .discover-photo {
 	margin: 0rem 1rem 1.5rem 1rem;
-	background: linear-gradient(#00000030, transparent),
-		url("https://i.postimg.cc/sfT8mncv/blue.jpg");
+	background: linear-gradient(#00000030, transparent), url("./assets/blue.jpg");
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -47,7 +46,7 @@
 .discover-edit {
 	margin: 0rem 1rem 2rem 1rem;
 	background: linear-gradient(#00000030, transparent),
-		url("https://i.postimg.cc/15TdhfbS/orange.jpg");
+		url("./assets/orange.jpg");
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -86,19 +85,23 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.popular-head {
+	font-size: 3rem;
+	font-weight: 600;
+	padding: 1rem 2rem 0rem 2rem;
+	flex-grow: 1;
+	color: var(--head-primary);
+}
+
 .popular-main {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: auto;
 	grid-gap: 2.5vh 0rem;
-	flex-grow: 10;
+	flex-grow: 9;
 	height: 100%;
-}
-.popular-head {
-	font-size: 3rem;
-	font-weight: 600;
-	padding: 0rem 2rem 1.5rem 2rem;
-	color: var(--head-primary);
+	margin: 2rem 0 2rem 0;
 }
 
 @media screen and (max-width: 940px) {
