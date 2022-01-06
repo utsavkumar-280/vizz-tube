@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useAppDataContext, useAuth } from "./Context";
 import { VIZZ_API } from "./utils";
@@ -29,7 +30,9 @@ import {
 
 function App() {
 	const navigate = useNavigate();
-	const { state, dispatch } = useAppDataContext();
+	const { pathname, search } = useLocation();
+	console.log({ pathname });
+	const { dispatch } = useAppDataContext();
 	const {
 		state: { token },
 		logout,
@@ -37,9 +40,7 @@ function App() {
 
 	useEffect(() => {
 		setupAuthExceptionHandler(logout, navigate);
-	}, []);
 
-	useEffect(() => {
 		(async () => {
 			try {
 				const {
@@ -52,6 +53,10 @@ function App() {
 			}
 		})();
 	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname, search]);
 
 	useEffect(() => {
 		if (token) {
@@ -81,7 +86,6 @@ function App() {
 		}
 	}, [token]);
 
-	console.log({ state });
 	return (
 		<div className="App">
 			<div className="app-container">

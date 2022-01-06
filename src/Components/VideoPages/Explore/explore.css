@@ -55,6 +55,9 @@
 	flex-grow: 9;
 	padding: 2rem;
 }
+.video-card-container-alt {
+	grid-template-rows: repeat(3, 1fr);
+}
 .loader-container {
 	color: var(--primary);
 	display: flex;
