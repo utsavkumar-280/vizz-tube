@@ -10,6 +10,12 @@ export const Explore = () => {
 	const { state } = useAppDataContext();
 	const search = new URLSearchParams(useLocation().search);
 	const searchedCategory = search.get("cat") ? search.get("cat") : "All Videos";
+
+	const filteredVideoLength = state.videos.filter(
+		(video) => video.category === searchedCategory
+	).length;
+	const islessThan3Row = filteredVideoLength !== 0 && filteredVideoLength <= 10;
+
 	return (
 		<div className="explore-container">
 			<div className="explore-main">
@@ -31,7 +37,11 @@ export const Explore = () => {
 						})}
 				</nav>
 				{state.videos.length !== 0 ? (
-					<section className="video-card-container">
+					<section
+						className={`video-card-container ${
+							islessThan3Row && "video-card-container-alt"
+						}`}
+					>
 						{searchedCategory === "All Videos"
 							? state.videos.map((video) => {
 									return <VideoCard video={video} key={video._id} />;
