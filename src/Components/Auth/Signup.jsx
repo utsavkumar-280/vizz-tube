@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useLocation, Navigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { CircleSpinner } from "react-spinners-kit";
 import * as Yup from "yup";
 import { useAuth } from "../../Context";
 import "./styles.css";
@@ -216,7 +217,14 @@ export const Signup = () => {
 								</div>
 								<div className="signup-error">{signupError}</div>
 								<button type="submit" className="form-submit-cta">
-									{isLoading ? "Creating account..." : "Create account"}
+									{isLoading ? (
+										<>
+											<p style={{ paddingRight: "1rem" }}>Creating Account</p>
+											<CircleSpinner size={20} loading />
+										</>
+									) : (
+										"Create account"
+									)}
 								</button>
 							</Form>
 						</Formik>

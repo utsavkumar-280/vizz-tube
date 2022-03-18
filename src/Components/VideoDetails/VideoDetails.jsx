@@ -3,6 +3,7 @@ import ReactPlayer from "react-player/youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
+import { CircleSpinner } from "react-spinners-kit";
 import { useParams } from "react-router-dom";
 import { FaPlusCircle, FaCheckCircle } from "react-icons/fa";
 import {
@@ -19,6 +20,7 @@ export const VideoDetails = () => {
 	const [playlistTitle, setPlaylistTitle] = useState("");
 	const [playlistModal, setPlaylistModal] = useState(false);
 	const [newPlaylistInput, setNewPlaylistInput] = useState(false);
+	const [isLiking, setIsLiking] = useState(false);
 	let { vidId } = useParams();
 
 	const formSubmit = (e) => {
@@ -56,6 +58,8 @@ export const VideoDetails = () => {
 			}
 		})();
 	}, [vidId]);
+
+	console.log({ liked, history, playlists, vidId });
 
 	return (
 		<div className="video-details-container">
@@ -103,23 +107,39 @@ export const VideoDetails = () => {
 						<section className="video-cta-container">
 							<button
 								className={
-									liked.videos?.find((vid) => vid.video._id == vidId)
+									liked.videos?.find((vid) => vid.video._id === vidId)
 										? "video-cta color-secondary-liked"
 										: "video-cta color-secondary"
 								}
 								onClick={() => {
+									setIsLiking(true);
 									addOrRemoveVideoInPlaylist({
 										token,
 										type: "SET_LIKED",
 										dispatch,
 										playlistId: liked._id,
 										video: vidId,
+										setIsLiking: setIsLiking,
 									});
 								}}
 							>
-								{liked.videos?.find((vid) => vid.video._id == vidId)
-									? "Liked"
-									: "Like"}
+								{liked.videos?.find((vid) => vid.video._id === vidId) ? (
+									isLiking ? (
+										<>
+											<p style={{ paddingRight: "1rem" }}>Liked</p>
+											<CircleSpinner size={20} loading />
+										</>
+									) : (
+										"Liked"
+									)
+								) : isLiking ? (
+									<>
+										<p style={{ paddingRight: "1rem" }}>Like</p>
+										<CircleSpinner size={20} loading />
+									</>
+								) : (
+									"Like"
+								)}
 							</button>
 							<button
 								className="video-cta color-primary"

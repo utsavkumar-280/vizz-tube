@@ -50,6 +50,13 @@
 	border-radius: 1rem;
 	cursor: pointer;
 	transition: all ease 0.25s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.playlist-cta div {
+	border: 4px solid rgba(255, 255, 255, 0.322);
+	border-right-color: white;
 }
 .playlist-cta:hover {
 	background-color: var(--primary);

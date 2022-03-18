@@ -4,7 +4,8 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "../../Context";
-// import "./styles.css";
+import { CircleSpinner } from "react-spinners-kit";
+import "./styles.css";
 
 export const Login = () => {
 	const [isHidden, setIsHidden] = useState(true);
@@ -113,7 +114,14 @@ export const Login = () => {
 								</div>
 								<div className="login-error">{loginError}</div>
 								<button type="submit" className="form-submit-cta">
-									{isLoading ? "Logging In..." : "Login"}
+									{isLoading ? (
+										<>
+											<p style={{ paddingRight: "1rem" }}>Logging in</p>
+											<CircleSpinner size={20} loading />
+										</>
+									) : (
+										"Login"
+									)}
 								</button>
 								<Link
 									to="/forgot-pass"

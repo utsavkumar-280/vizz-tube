@@ -16,6 +16,54 @@
 	background-color: var(--back-primary);
 }
 
+.playlist-empty {
+	margin: 5rem 0;
+}
+
+.loading-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem 0;
+}
+.loading-container div {
+	border: 4.75px solid rgba(255, 255, 255, 0.13);
+	border-right-color: var(--head-secondary);
+}
+
+.modal-page-container {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.modal-page {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(1px);
+	overflow-y: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loading-modal-container {
+	padding: 4rem;
+	border-radius: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--back-primary);
+}
+
+.loading-modal-container div {
+	border: 5px solid rgba(255, 255, 255, 0.13);
+	border-right-color: rgba(255, 255, 255, 0.733);
+}
+
 @media screen and (max-width: 540px) {
 	.liked-main {
 		width: 100%;

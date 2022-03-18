@@ -38,6 +38,8 @@ export const addOrRemoveVideoInPlaylist = async ({
 	video,
 	type,
 	dispatch,
+	setIsLiking,
+	setIsDeleting,
 }) => {
 	try {
 		const {
@@ -54,6 +56,12 @@ export const addOrRemoveVideoInPlaylist = async ({
 			},
 		});
 		dispatch({ type, payload: response });
+		if (setIsLiking) {
+			setIsLiking(false);
+		}
+		if (setIsDeleting) {
+			setIsDeleting(false);
+		}
 	} catch (error) {
 		console.log(error);
 	}
@@ -129,7 +137,12 @@ export const deletePlaylist = async ({ token, playlistId, dispatch }) => {
 	}
 };
 
-export const clearHistory = async ({ token, playlistId, dispatch }) => {
+export const clearHistory = async ({
+	token,
+	playlistId,
+	dispatch,
+	setIsClearing,
+}) => {
 	try {
 		const {
 			data: { response },
@@ -145,6 +158,7 @@ export const clearHistory = async ({ token, playlistId, dispatch }) => {
 		});
 
 		dispatch({ type: "SET_HISTORY", payload: response });
+		setIsClearing(false);
 	} catch (error) {
 		console.log(error);
 	}

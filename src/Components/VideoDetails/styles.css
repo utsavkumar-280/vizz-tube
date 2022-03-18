@@ -78,7 +78,16 @@
 	letter-spacing: 0.05rem;
 	border-radius: 1rem;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
+.video-cta div {
+	border: 4px solid rgba(255, 255, 255, 0.322);
+	border-right-color: white;
+}
+
 .color-primary {
 	background-color: var(--primary);
 	color: var(--head-primary);
