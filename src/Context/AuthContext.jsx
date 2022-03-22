@@ -7,15 +7,22 @@ import { VIZZ_API } from "../utils";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-	const { userName, token } = JSON.parse(localStorage.getItem("user_cred")) || {
-		userName: "",
+	const { userFirstName, userLastName, userEmail, token } = JSON.parse(
+		localStorage.getItem("user_cred")
+	) || {
+		userFirstName: "",
+		userLastName: "",
+		userEmail: "",
 		token: "",
 	};
 
 	const initialState = {
-		userName,
 		token,
-		userDetails: null,
+		userDetails: {
+			userFirstName,
+			userLastName,
+			userEmail,
+		},
 	};
 
 	const [state, dispatch] = useReducer(AuthReducer, initialState);
@@ -45,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 		try {
 			const {
 				data: {
-					response: { firstname, token },
+					response: { userFirstName, userLastName, userEmail, token },
 				},
 				status,
 			} = await axios({
@@ -58,7 +65,9 @@ export const AuthProvider = ({ children }) => {
 				localStorage?.setItem(
 					"user_cred",
 					JSON.stringify({
-						userName: firstname,
+						userFirstName,
+						userLastName,
+						userEmail,
 						token,
 					})
 				);
@@ -66,7 +75,7 @@ export const AuthProvider = ({ children }) => {
 
 			dispatch({
 				type: "LOGIN",
-				payload: { userName: firstname, token },
+				payload: { userFirstName, userLastName, userEmail, token },
 			});
 
 			axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;

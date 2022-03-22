@@ -8,9 +8,11 @@ import { useAuth } from "../../Context";
 
 export const Header = () => {
 	const {
-		state: { userName },
+		state: { userDetails },
 	} = useAuth();
 	const [searchTerm, setSearchTerm] = useState("");
+
+	console.log({ userDetails });
 
 	const navigate = useNavigate();
 
@@ -62,7 +64,9 @@ export const Header = () => {
 					<Link to="/profile" className="heading flex-align-center">
 						<FaUserCircle className="head-icons" />
 						<span className="head-hidden head-login ">
-							{userName ? userName : "Login"}
+							{userDetails?.userFirstName
+								? userDetails?.userFirstName
+								: "Login"}
 						</span>
 					</Link>
 				</div>

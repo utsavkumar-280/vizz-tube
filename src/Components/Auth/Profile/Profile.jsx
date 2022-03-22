@@ -12,34 +12,8 @@ export const Profile = () => {
 		logout,
 	} = useAuth();
 
-	useEffect(() => {
-		if (!userDetails) {
-			(async () => {
-				try {
-					const {
-						data: { response },
-						status,
-					} = await axios({
-						url: `${VIZZ_API}/users/info`,
-						method: "GET",
-						headers: {
-							Authorization: `Bearer ${token}`,
-						},
-					});
-					console.log({ response });
+	console.log({ userDetails, token });
 
-					if (status === 200) {
-						dispatch({
-							type: "SET_USER_DETAILS",
-							payload: { userDetails: response },
-						});
-					}
-				} catch (error) {
-					console.log(error);
-				}
-			})();
-		}
-	}, [token]);
 	return (
 		<div className="profile-container">
 			<div className="profile-main">
@@ -48,14 +22,17 @@ export const Profile = () => {
 					<div>
 						<p className="profile-text">
 							Firstname:{" "}
-							<span className="primary-color">{userDetails?.firstname}</span>
+							<span className="primary-color">
+								{userDetails?.userFirstName}
+							</span>
 						</p>
 						<p className="profile-text">
 							Lastname:{" "}
-							<span className="primary-color">{userDetails?.lastname}</span>
+							<span className="primary-color">{userDetails?.userLastName}</span>
 						</p>
 						<p className="profile-text">
-							Email: <span className="primary-color">{userDetails?.email}</span>
+							Email:{" "}
+							<span className="primary-color">{userDetails?.userEmail}</span>
 						</p>
 					</div>
 

@@ -4,14 +4,21 @@ export const AuthReducer = (state, { type, payload }) => {
 			return {
 				...state,
 				token: payload.token,
-				userName: payload.userName,
+				userDetails: {
+					userFirstName: payload.userFirstName,
+					userLastName: payload.userLastName,
+					userEmail: payload.userEmail,
+				},
 			};
 		case "LOGOUT":
 			return {
 				...state,
 				token: "",
-				userName: "",
-				userDetails: null,
+				userDetails: {
+					userFirstname: "",
+					userLastname: "",
+					userEmail: "",
+				},
 			};
 		case "SET_USER_DETAILS":
 			return {

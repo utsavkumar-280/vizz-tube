@@ -4,7 +4,8 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "../../Context";
-// import "./styles.css";
+import { CircleSpinner } from "react-spinners-kit";
+import "./styles.css";
 
 export const Login = () => {
 	const [isHidden, setIsHidden] = useState(true);
@@ -67,74 +68,86 @@ export const Login = () => {
 								setSubmitting(false);
 							}}
 						>
-							<Form className="form-field-container">
-								<div className="input-control">
-									<label htmlFor="email" className="form-label">
-										Email Address
-									</label>
-									<div className="input-field-container">
-										<Field
-											name="email"
-											type="email"
-											placeholder="Enter email"
-											className="input-field"
-										/>
-									</div>
-
-									<ErrorMessage name="email" className="form-error" />
-								</div>
-
-								<div className="input-control">
-									<label htmlFor="password" className="form-label">
-										Password
-									</label>
-									<div className="input-field-container">
-										<span className="input-grid width100">
+							{(props) => (
+								<Form className="form-field-container">
+									<div className="input-control">
+										<label htmlFor="email" className="form-label">
+											Email Address
+										</label>
+										<div className="input-field-container">
 											<Field
-												name="password"
-												placeholder="Enter password"
-												className="input-pass-field"
-												type={isHidden ? "password" : "text"}
+												name="email"
+												type="email"
+												placeholder="Enter email"
+												className="input-field"
 											/>
-											<button
-												type="button"
-												className="input-pass-cta"
-												onClick={() => setIsHidden((isHidden) => !isHidden)}
-											>
-												{isHidden ? (
-													<FaEyeSlash className="hide-cta" />
-												) : (
-													<FaEye className="hide-cta" />
-												)}
-											</button>
-										</span>
+										</div>
+
+										<ErrorMessage name="email" className="form-error" />
 									</div>
-									<ErrorMessage name="password" className="form-error" />
-								</div>
-								<div className="login-error">{loginError}</div>
-								<button type="submit" className="form-submit-cta">
-									{isLoading ? "Logging In..." : "Login"}
-								</button>
-								<Link
-									to="/forgot-pass"
-									state={previousPath}
-									className="form-links marginTop1"
-								>
-									Forgot Password?
-								</Link>
-								<p className="form-text marginTop1">
-									Not Registered yet?
-									<span>
-										<Link
-											to="/signup"
-											state={previousPath}
-											className="form-links"
-										>
-											Sign up
-										</Link>
-									</span>
-								</p>
-							</Form>
+
+									<div className="input-control">
+										<label htmlFor="password" className="form-label">
+											Password
+										</label>
+										<div className="input-field-container">
+											<span className="input-grid width100">
+												<Field
+													name="password"
+													placeholder="Enter password"
+													className="input-pass-field"
+													type={isHidden ? "password" : "text"}
+												/>
+												<button
+													type="button"
+													className="input-pass-cta"
+													onClick={() => setIsHidden((isHidden) => !isHidden)}
+												>
+													{isHidden ? (
+														<FaEyeSlash className="hide-cta" />
+													) : (
+														<FaEye className="hide-cta" />
+													)}
+												</button>
+											</span>
+										</div>
+										<ErrorMessage name="password" className="form-error" />
+									</div>
+									<div className="login-error">{loginError}</div>
+
+									<button type="submit" className="form-submit-cta">
+										{isLoading ? (
+											<>
+												<p style={{ paddingRight: "1rem" }}>Logging in</p>
+												<CircleSpinner size={20} loading />
+											</>
+										) : (
+											"Login"
+										)}
+									</button>
+									<p
+										className="form-text marginTop1"
+										onClick={() => {
+											props.setFieldValue("email", "tester@gmail.com");
+											props.setFieldValue("password", "P@ssw0rd");
+										}}
+									>
+										<span className="form-links">Fill Test Credentials</span>
+									</p>
+									<p className="form-text marginTop1">
+										Not Registered yet?
+										<span>
+											<Link
+												to="/signup"
+												state={previousPath}
+												className="form-links"
+											>
+												Sign up
+											</Link>
+										</span>
+									</p>
+								</Form>
+							)}
 						</Formik>
 					</div>
 				)}

@@ -1,6 +1,7 @@
-import { useAppDataContext, useAuth } from "../../../Context";
 import { useState } from "react";
+import { useAppDataContext, useAuth } from "../../../Context";
 import { Link, useParams, Navigate } from "react-router-dom";
+import { CircleSpinner } from "react-spinners-kit";
 import {
 	addOrRemoveVideoInPlaylist,
 	deletePlaylist,
@@ -22,9 +23,14 @@ export const PlaylistVideos = () => {
 		(playlist) => playlist._id === playlistId
 	);
 
+	const objectNotLoaded = Object.keys(state.playlists).length === 0;
+
+	console.log({ playlist, state }, Boolean(state.playlists));
+
 	const temp = playlist?.title;
 	const [playlistTitle, setPlaylistTitle] = useState(temp);
 	const [titleInput, setTitleInput] = useState(false);
+	const [isDeleting, setIsDeleting] = useState(false);
 
 	const TitleInput = () => {
 		return (
@@ -68,99 +74,110 @@ export const PlaylistVideos = () => {
 		);
 	};
 	return (
-		<>
-			{playlist ? (
-				<div className="playlistVideos-container">
-					<div className="playlistVideos-main">
-						<div className="playlist-head-container">
-							<div className="playlist-text">
-								{titleInput ? (
-									<TitleInput />
-								) : (
-									<h1 className="playlist-head"> {playlist?.title}</h1>
-								)}
-
-								<p className="playlist-para">
-									{playlist?.videos?.length === 1
-										? `${playlist?.videos?.length} video`
-										: `${playlist?.videos?.length} videos`}
-								</p>
-							</div>
-							<div className="playlist-head-cta">
-								<button
-									type="button"
-									onClick={() => {
-										setTitleInput(true);
-									}}
-									className="video-remove-cta margin1"
-								>
-									<BiEditAlt />
-								</button>
-								<button
-									type="button"
-									onClick={() => {
-										deletePlaylist({ token, dispatch, playlistId });
-									}}
-									className="video-remove-cta margin1"
-								>
-									<RiDeleteBin5Fill />
-								</button>
-							</div>
-						</div>
-						<div className="playlist-videos-container">
-							{playlist?.videos?.length !== 0 ? (
-								playlist?.videos?.map(({ video, date }, key) => (
-									<div className="video-flat-card" key={key}>
-										<img
-											src={video.thumbnail}
-											alt="video-img"
-											className="flat-card-img"
-										/>
-										<div className="flat-card-video-info">
-											<div className="flat-card-text">
-												<div className="flat-card-info">
-													<p className="flat-card-category">
-														#{video.category}
-													</p>
-													<Link
-														to={`/explore/${video._id}`}
-														className="no-text-deco"
-													>
-														<h1 className="flat-card-title">{video.title}</h1>
-													</Link>
-													<h2 className="flat-card-author">{video.author}</h2>
-												</div>
-												<p className="flat-card-date">{date}</p>
-											</div>
-											<button
-												type="button"
-												className="video-remove-cta"
-												onClick={() => {
-													addOrRemoveVideoInPlaylist({
-														token,
-														type: "UPDATE_PLAYLIST",
-														dispatch,
-														playlistId: playlist._id,
-														video: video._id,
-													});
-												}}
-											>
-												<RiDeleteBin5Fill />
-											</button>
-										</div>
-									</div>
-								))
+		<div className="playlistVideos-container">
+			{objectNotLoaded ? (
+				<div className="loading-container">
+					<CircleSpinner size={25} loading />
+				</div>
+			) : playlist ? (
+				<div className="playlistVideos-main">
+					<div className="playlist-head-container">
+						<div className="playlist-text">
+							{titleInput ? (
+								<TitleInput />
 							) : (
-								<div className="playlist-empty">
-									<h1>This playlist is empty</h1>
-								</div>
+								<h1 className="playlist-head"> {playlist?.title}</h1>
 							)}
+
+							<p className="playlist-para">
+								{playlist?.videos?.length === 1
+									? `${playlist?.videos?.length} video`
+									: `${playlist?.videos?.length} videos`}
+							</p>
+						</div>
+						<div className="playlist-head-cta">
+							<button
+								type="button"
+								onClick={() => {
+									setTitleInput(true);
+								}}
+								className="video-remove-cta margin1"
+							>
+								<BiEditAlt />
+							</button>
+							<button
+								type="button"
+								onClick={() => {
+									deletePlaylist({ token, dispatch, playlistId });
+								}}
+								className="video-remove-cta margin1"
+							>
+								<RiDeleteBin5Fill />
+							</button>
 						</div>
 					</div>
+					<div className="playlist-videos-container">
+						{playlist?.videos?.length !== 0 ? (
+							playlist?.videos?.map(({ video, date }, key) => (
+								<div className="video-flat-card" key={key}>
+									<img
+										src={video.thumbnail}
+										alt="video-img"
+										className="flat-card-img"
+									/>
+									<div className="flat-card-video-info">
+										<div className="flat-card-text">
+											<div className="flat-card-info">
+												<p className="flat-card-category">#{video.category}</p>
+												<Link
+													to={`/explore/${video._id}`}
+													className="no-text-deco"
+												>
+													<h1 className="flat-card-title">{video.title}</h1>
+												</Link>
+												<h2 className="flat-card-author">{video.author}</h2>
+											</div>
+											<p className="flat-card-date">{date}</p>
+										</div>
+										<button
+											type="button"
+											className="video-remove-cta"
+											onClick={() => {
+												setIsDeleting(true);
+												addOrRemoveVideoInPlaylist({
+													token,
+													type: "UPDATE_PLAYLIST",
+													dispatch,
+													playlistId: playlist._id,
+													video: video._id,
+													setIsDeleting: setIsDeleting,
+												});
+											}}
+										>
+											<RiDeleteBin5Fill />
+										</button>
+									</div>
+								</div>
+							))
+						) : (
+							<div className="playlist-empty">
+								<h1>This playlist is empty</h1>
+							</div>
+						)}
+					</div>
+					{isDeleting && (
+						<div className="modal-page-container">
+							<div className="modal-page">
+								<div className="loading-modal-container">
+									<CircleSpinner size={27.5} loading />
+								</div>
+							</div>
+						</div>
+					)}
 				</div>
 			) : (
 				<Navigate to="/playlists" replace />
 			)}
-		</>
+		</div>
 	);
 };
