@@ -12,6 +12,8 @@ export const Header = () => {
 	} = useAuth();
 	const [searchTerm, setSearchTerm] = useState("");
 
+	console.log({ userDetails });
+
 	const navigate = useNavigate();
 
 	return (
@@ -62,7 +64,9 @@ export const Header = () => {
 					<Link to="/profile" className="heading flex-align-center">
 						<FaUserCircle className="head-icons" />
 						<span className="head-hidden head-login ">
-							{userDetails ? userDetails.userFirstName : "Login"}
+							{userDetails?.userFirstName
+								? userDetails?.userFirstName
+								: "Login"}
 						</span>
 					</Link>
 				</div>
