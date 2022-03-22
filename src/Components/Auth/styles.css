@@ -173,6 +173,7 @@
 	transition: text-decoration 0.5s ease;
 }
 .form-links:hover {
+	cursor: pointer;
 	text-decoration: underline;
 	transition: text-decoration 0.5s ease;
 }

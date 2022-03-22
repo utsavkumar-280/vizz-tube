@@ -9,4 +9,6 @@ export const categories = [
 	"Popular",
 ];
 
-export const VIZZ_API = "https://vizztube-apis.herokuapp.com";
+// export const VIZZ_API = "https://vizztube-apis.herokuapp.com";
+
+export const VIZZ_API = "http://localhost:8040";
